@@ -1,0 +1,27 @@
+contents:
+  keyring:
+    - https://packages.wolfi.dev/os/wolfi-signing.rsa.pub
+  repositories:
+    - https://packages.wolfi.dev/os
+
+accounts:
+  groups:
+    - groupname: nonroot
+      gid: 65532
+  users:
+    - username: nonroot
+      uid: 65532
+      gid: 65532
+  run-as: nonroot
+
+work-dir: /home/nonroot
+
+archs:
+  - amd64
+  - arm64
+
+annotations:
+  org.opencontainers.image.licenses: 'MIT'
+  org.opencontainers.image.vendor: 'GitGuardian'
+  org.opencontainers.image.authors: 'GitGuardian SRE Team <sre@gitguardian.com>'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi'

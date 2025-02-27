@@ -1,0 +1,44 @@
+name: loki
+
+on:
+  schedule:
+    - cron: "00 06 * * *"
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'images/loki/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+  security-events: write
+  actions: read
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        include:
+          - tag: latest
+            target: prod
+            packages: ''
+          - tag: latest-shell
+            target: shell
+            packages: ''
+          - tag: '3.4'
+            target: prod
+            packages: 'loki~3.4'
+          - tag: '3.4-shell'
+            target: shell
+            packages: 'loki~3.4'
+    name: ${{ matrix.tag }}
+    uses: './.github/workflows/release.yaml'
+    with:
+      tag: ${{ matrix.tag }}
+      target: ${{ matrix.target }}
+      packages: ${{ matrix.packages }}
+    secrets: inherit

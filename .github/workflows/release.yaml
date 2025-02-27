@@ -1,0 +1,174 @@
+name: Reusable release workflow
+
+on:
+  workflow_call:
+    inputs:
+      registry:
+        description: 'Registry'
+        type: string
+        required: false
+        default: ghcr.io
+      registry-username:
+        description: 'Registry username'
+        type: string
+        required: false
+        default: ${{ github.actor }}
+      registry-password:
+        description: 'Registry password'
+        type: string
+        required: false
+        default: ''
+      image:
+        description: 'Image name'
+        type: string
+        required: false
+        default: gitguardian/wolfi/${{ github.workflow }}
+      tag:
+        description: 'Image tag'
+        type: string
+        required: false
+        default: 'latest'
+      config-dir:
+        description: 'Config directory'
+        type: string
+        required: false
+        default: images/${{ github.workflow }}
+      target:
+        description: 'Image target'
+        type: string
+        required: false
+        default: 'prod'
+      packages:
+        description: 'Additional packages'
+        type: string
+        required: false
+        default: ''
+      archs:
+        description: 'Architectures'
+        type: string
+        required: false
+        default: 'amd64,arm64'
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+  security-events: write
+  actions: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    outputs:
+      digest: ${{ steps.apko.outputs.digest }}
+    steps:
+      - uses: imjasonh/setup-crane@v0.4
+      - uses: sigstore/cosign-installer@v3
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Login to Registry
+        uses: docker/login-action@v3
+        id: login-to-registry
+        with:
+          registry: ${{ inputs.registry }}
+          username: ${{ inputs.registry-username }}
+          password: ${{ inputs.registry-password || github.token }}
+
+      - name: Create SBOM directory
+        id: output
+        shell: bash
+        run: |
+          mkdir -p ${{ github.workspace }}/sbom
+
+      - name: Publish image
+        id: apko
+        uses: distroless/actions/apko-publish@main
+        with:
+          config: ${{ inputs.config-dir }}/${{ inputs.target }}.yaml
+          tag: ${{ inputs.registry }}/${{ inputs.image }}:${{ inputs.tag }}
+          package-append: ${{ inputs.packages }}
+          archs: ${{ inputs.archs }}
+          sbom-path: ${{ github.workspace }}/sbom
+
+      - id: digest
+        shell: bash
+        run: |
+          echo "digest=$(crane digest ${{ inputs.registry }}/${{ inputs.image }}:${{ inputs.tag }})" >> $GITHUB_OUTPUT
+          if [[ "${{ inputs.archs }}" == *"amd64"* ]]; then
+              echo "digest-amd64=$(crane digest --platform=linux/amd64 ${{ inputs.registry }}/${{ inputs.image }}:${{ inputs.tag }})" >> $GITHUB_OUTPUT
+          else
+              echo "digest-amd64=''" >> $GITHUB_OUTPUT
+          fi
+          if [[ "${{ inputs.archs }}" == *"arm64"* ]]; then
+              echo "digest-arm64=$(crane digest --platform=linux/arm64 ${{ inputs.registry }}/${{ inputs.image }}:${{ inputs.tag }})" >> $GITHUB_OUTPUT
+          else
+              echo "digest-arm64=''" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Sign image
+        shell: bash
+        env:
+          COSIGN_YES: "true"
+        run: |
+          cosign sign \
+            --recursive \
+            --oidc-provider=github-actions \
+            ${{ inputs.registry }}/${{ inputs.image }}@${{ steps.digest.outputs.digest }}
+
+      - name: Attest provenance
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-name: ${{ inputs.registry }}/${{ inputs.image }}
+          subject-digest: ${{ steps.digest.outputs.digest }}
+          push-to-registry: true
+
+      - name: Attest index SBOM
+        shell: bash
+        env:
+          COSIGN_YES: "true"
+        run: |
+          cosign attest \
+            --type=spdxjson \
+            --predicate=${{ github.workspace }}/sbom/sbom-index.spdx.json \
+            --oidc-provider=github-actions \
+            ${{ inputs.registry }}/${{ inputs.image }}@${{ steps.digest.outputs.digest }}
+
+      - if: steps.digest.outputs.digest-amd64 != ''
+        name: Attest amd64 SBOM
+        shell: bash
+        env:
+          COSIGN_YES: "true"
+        run: |
+          cosign attest \
+            --type=spdxjson \
+            --predicate=${{ github.workspace }}/sbom/sbom-x86_64.spdx.json \
+            --oidc-provider=github-actions \
+            ${{ inputs.registry }}/${{ inputs.image }}@${{ steps.digest.outputs.digest-amd64 }}
+
+      - if: steps.digest.outputs.digest-arm64 != ''
+        name: Attest arm64 SBOM
+        shell: bash
+        env:
+          COSIGN_YES: "true"
+        run: |
+          cosign attest \
+            --type=spdxjson \
+            --predicate=${{ github.workspace }}/sbom/sbom-aarch64.spdx.json \
+            --oidc-provider=github-actions \
+            ${{ inputs.registry }}/${{ inputs.image }}@${{ steps.digest.outputs.digest-arm64 }}
+
+      - name: Scan image
+        id: scan
+        uses: anchore/scan-action@v6
+        with:
+          image: ${{ inputs.registry }}/${{ inputs.image }}:${{ inputs.tag }}
+          cache-db: true
+          fail-build: 'false'
+          severity-cutoff: 'high'
+
+      - uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: ${{ steps.scan.outputs.sarif }}

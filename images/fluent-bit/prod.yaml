@@ -1,0 +1,18 @@
+include: images/apko.yaml
+
+contents:
+  packages:
+    - ca-certificates-bundle
+    - glibc-locale-posix
+    - fluent-bit
+    - wolfi-baselayout
+
+entrypoint:
+  command: /usr/bin/fluent-bit
+
+cmd: --config=/fluent-bit/etc/fluent-bit.conf
+
+annotations:
+  org.opencontainers.image.title: 'fluent-bit'
+  org.opencontainers.image.description: 'Fluent-bit image based on Wolfi OS'
+  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/fluent-bit'
