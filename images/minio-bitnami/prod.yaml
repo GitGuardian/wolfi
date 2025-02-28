@@ -1,0 +1,31 @@
+include: images/apko.yaml
+
+contents:
+  packages:
+    - bash
+    - bash-binsh
+    - busybox
+    - curl
+    - ca-certificates-bundle
+    - coreutils
+    - glibc-locale-posix
+    - jq
+    - mc
+    - minio
+    - minio-bitnami-2025-compat
+    - ncurses
+    - wait-for-port
+    - wolfi-baselayout
+
+entrypoint:
+  command: /opt/bitnami/scripts/minio/entrypoint.sh
+
+cmd: /opt/bitnami/scripts/minio/run.sh
+
+environment:
+  BITNAMI_APP_NAME: minio
+
+annotations:
+  org.opencontainers.image.title: 'minio-bitnami'
+  org.opencontainers.image.description: 'MinIO-Bitnami image based on Wolfi OS'
+  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/minio-bitnami'
