@@ -1,0 +1,8 @@
+include: images/nginx/prod.yaml
+
+contents:
+  packages:
+    - bash
+    - busybox
+    - curl
+    - vim

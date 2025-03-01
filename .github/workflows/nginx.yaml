@@ -1,0 +1,44 @@
+name: nginx
+
+on:
+  schedule:
+    - cron: "00 06 * * *"
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'images/nginx/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+  security-events: write
+  actions: read
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        include:
+          - tag: latest
+            target: prod
+            packages: ''
+          - tag: latest-shell
+            target: shell
+            packages: ''
+          - tag: '1.26'
+            target: prod
+            packages: 'nginx~1.26,nginx-package-config~1.26,nginx-mod-stream~1.26'
+          - tag: '1.26-shell'
+            target: shell
+            packages: 'nginx~1.26,nginx-package-config~1.26,nginx-mod-stream~1.26'
+    name: ${{ matrix.tag }}
+    uses: './.github/workflows/release.yaml'
+    with:
+      tag: ${{ matrix.tag }}
+      target: ${{ matrix.target }}
+      packages: ${{ matrix.packages }}
+    secrets: inherit
