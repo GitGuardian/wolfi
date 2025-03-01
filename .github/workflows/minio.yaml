@@ -22,23 +22,17 @@ jobs:
   publish:
     strategy:
       matrix:
+        version: [latest, "0.20250203"]
+        variant: [prod, shell]
         include:
-          - tag: latest
-            target: prod
+          - version: latest
             packages: ''
-          - tag: latest-shell
-            target: shell
-            packages: ''
-          - tag: '0.20250203'
-            target: prod
+          - version: "0.20250203"
             packages: 'minio~0.20250203,mc~0.20250215'
-          - tag: '0.20250203-shell'
-            target: shell
-            packages: 'minio~0.20250203,mc~0.20250215'
-    name: ${{ matrix.tag }}
+    name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
-      tag: ${{ matrix.tag }}
-      target: ${{ matrix.target }}
+      tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
+      target: ${{ matrix.variant }}
       packages: ${{ matrix.packages }}
     secrets: inherit

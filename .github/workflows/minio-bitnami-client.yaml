@@ -22,17 +22,16 @@ jobs:
   publish:
     strategy:
       matrix:
+        version: [latest, "0.20250215"]
         include:
-          - tag: latest
-            target: prod
+          - version: latest
             packages: ''
-          - tag: '0.20250215'
-            target: prod
+          - version: "0.20250215"
             packages: 'mc-bitnami-2025-compat~0.20250215,mc~0.20250215'
-    name: ${{ matrix.tag }}
+    name: ${{ matrix.version }}
     uses: './.github/workflows/release.yaml'
     with:
-      tag: ${{ matrix.tag }}
-      target: ${{ matrix.target }}
+      tag: ${{ matrix.version }}
+      target: prod
       packages: ${{ matrix.packages }}
     secrets: inherit

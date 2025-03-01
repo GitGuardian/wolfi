@@ -22,23 +22,17 @@ jobs:
   publish:
     strategy:
       matrix:
+        version: [latest, "3.2"]
+        variant: [prod, shell]
         include:
-          - tag: latest
-            target: prod
+          - version: latest
             packages: ''
-          - tag: latest-shell
-            target: shell
-            packages: ''
-          - tag: '3.2'
-            target: prod
+          - version: "3.2"
             packages: 'fluent-bit~3.2'
-          - tag: '3.2-shell'
-            target: shell
-            packages: 'fluent-bit~3.2'
-    name: ${{ matrix.tag }}
+    name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
-      tag: ${{ matrix.tag }}
-      target: ${{ matrix.target }}
+      tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
+      target: ${{ matrix.variant }}
       packages: ${{ matrix.packages }}
     secrets: inherit

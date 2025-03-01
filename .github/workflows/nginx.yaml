@@ -22,23 +22,19 @@ jobs:
   publish:
     strategy:
       matrix:
+        version: [latest, "1.27", "1.26"]
+        variant: [prod, shell]
         include:
-          - tag: latest
-            target: prod
+          - version: latest
             packages: ''
-          - tag: latest-shell
-            target: shell
-            packages: ''
-          - tag: '1.26'
-            target: prod
+          - version: "1.27"
+            packages: 'nginx~1.27,nginx-package-config~1.27,nginx-mod-stream~1.27'
+          - version: "1.26"
             packages: 'nginx~1.26,nginx-package-config~1.26,nginx-mod-stream~1.26'
-          - tag: '1.26-shell'
-            target: shell
-            packages: 'nginx~1.26,nginx-package-config~1.26,nginx-mod-stream~1.26'
-    name: ${{ matrix.tag }}
+    name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
-      tag: ${{ matrix.tag }}
-      target: ${{ matrix.target }}
+      tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
+      target: ${{ matrix.variant }}
       packages: ${{ matrix.packages }}
     secrets: inherit

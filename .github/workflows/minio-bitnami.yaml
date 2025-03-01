@@ -22,17 +22,16 @@ jobs:
   publish:
     strategy:
       matrix:
+        version: [latest, "0.20250203"]
         include:
-          - tag: latest
-            target: prod
+          - version: latest
             packages: ''
-          - tag: '0.20250203'
-            target: prod
+          - version: "0.20250203"
             packages: 'minio-bitnami-2025-compat~0.20250203,minio~0.20250203,mc~0.20250215'
-    name: ${{ matrix.tag }}
+    name: ${{ matrix.version }}
     uses: './.github/workflows/release.yaml'
     with:
-      tag: ${{ matrix.tag }}
-      target: ${{ matrix.target }}
+      tag: ${{ matrix.version }}
+      target: prod
       packages: ${{ matrix.packages }}
     secrets: inherit
