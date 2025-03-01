@@ -1,0 +1,69 @@
+name: python
+
+on:
+  schedule:
+    - cron: "00 06 * * *"
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'images/python/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+  security-events: write
+  actions: read
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        version: [latest, "3.13", "3.12", "3.11"]
+        variant: [prod, shell, dev]
+        include:
+          - version: latest
+            packages: ''
+
+            # 3.13
+          - version: "3.13"
+            variant: prod
+            packages: 'python3~3.13'
+          - version: "3.13"
+            variant: shell
+            packages: 'python3~3.13'
+          - version: "3.13"
+            variant: dev
+            packages: 'python3~3.13,python3-dev~3.13'
+
+          # 3.12
+          - version: "3.12"
+            variant: prod
+            packages: 'python3~3.12'
+          - version: "3.12"
+            variant: shell
+            packages: 'python3~3.12'
+          - version: "3.12"
+            variant: dev
+            packages: 'python3~3.12,python3-dev~3.12'
+
+          # 3.11
+          - version: "3.11"
+            variant: prod
+            packages: 'python3~3.11'
+          - version: "3.11"
+            variant: shell
+            packages: 'python3~3.11'
+          - version: "3.11"
+            variant: dev
+            packages: 'python3~3.11,python3-dev~3.11'
+    name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
+    uses: './.github/workflows/release.yaml'
+    with:
+      tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
+      target: ${{ matrix.variant }}
+      packages: ${{ matrix.packages }}
+    secrets: inherit

@@ -1,4 +1,4 @@
-include: images/nginx/prod.yaml
+include: images/python/prod.yaml
 
 contents:
   packages:
