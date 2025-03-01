@@ -1,0 +1,37 @@
+name: postgres-bitnami
+
+on:
+  schedule:
+    - cron: "00 06 * * *"
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'images/postgres-bitnami/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+  security-events: write
+  actions: read
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        version: [latest, "16.8"]
+        include:
+          - version: latest
+            packages: ''
+          - version: "16.8"
+            packages: 'postgresql~16.8,postgresql-client~16.8,postgresql-contrib~16.8,postgresql-oci-entrypoint~16.8,postgresql-bitnami-compat~16.4'
+    name: ${{ matrix.version }}
+    uses: './.github/workflows/release.yaml'
+    with:
+      tag: ${{ matrix.version }}
+      target: prod
+      packages: ${{ matrix.packages }}
+    secrets: inherit
