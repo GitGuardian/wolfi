@@ -1,0 +1,16 @@
+include: images/apko.yaml
+
+contents:
+  packages:
+    - ca-certificates-bundle
+    - glibc-locale-posix
+    - traefik
+    - wolfi-baselayout
+
+entrypoint:
+  command: /usr/bin/traefik
+
+annotations:
+  org.opencontainers.image.title: 'traefik'
+  org.opencontainers.image.description: 'Traefik image based on Wolfi OS'
+  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/traefik'

@@ -1,0 +1,38 @@
+name: traefik
+
+on:
+  schedule:
+    - cron: "00 06 * * *"
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'images/traefik/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+  security-events: write
+  actions: read
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        version: [latest, "3.3"]
+        variant: [prod, shell]
+        include:
+          - version: latest
+            packages: ''
+          - version: "3.3"
+            packages: 'traefik~3.3'
+    name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
+    uses: './.github/workflows/release.yaml'
+    with:
+      tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
+      target: ${{ matrix.variant }}
+      packages: ${{ matrix.packages }}
+    secrets: inherit
