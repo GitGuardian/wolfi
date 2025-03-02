@@ -4,7 +4,7 @@ contents:
   packages:
     - ca-certificates-bundle
     - glibc-locale-posix
-    - python3
+    # - python3
     - wolfi-baselayout
 
 entrypoint:

@@ -25,41 +25,48 @@ jobs:
         version: [latest, "3.13", "3.12", "3.11"]
         variant: [prod, shell, dev]
         include:
-          - version: latest
-            packages: ''
+          - version: "latest"
+            variant: prod
+            packages: 'python3'
+          - version: "latest"
+            variant: shell
+            packages: 'python3'
+          - version: "latest"
+            variant: dev
+            packages: 'python3,python3-dev,py3-pip'
 
             # 3.13
           - version: "3.13"
             variant: prod
-            packages: 'python3~3.13'
+            packages: 'python-3.13'
           - version: "3.13"
             variant: shell
-            packages: 'python3~3.13'
+            packages: 'python-3.13'
           - version: "3.13"
             variant: dev
-            packages: 'python3~3.13,python3-dev~3.13'
+            packages: 'python-3.13,python-3.13-dev,py3.13-pip'
 
           # 3.12
           - version: "3.12"
             variant: prod
-            packages: 'python3~3.12'
+            packages: 'python-3.12'
           - version: "3.12"
             variant: shell
-            packages: 'python3~3.12'
+            packages: 'python-3.12'
           - version: "3.12"
             variant: dev
-            packages: 'python3~3.12,python3-dev~3.12'
+            packages: 'python-3.12,python-3.12-dev,py3.12-pip'
 
           # 3.11
           - version: "3.11"
             variant: prod
-            packages: 'python3~3.11'
+            packages: 'python-3.11'
           - version: "3.11"
             variant: shell
-            packages: 'python3~3.11'
+            packages: 'python-3.11'
           - version: "3.11"
             variant: dev
-            packages: 'python3~3.11,python3-dev~3.11'
+            packages: 'python-3.11,python-3.11-dev,py3.11-pip'
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
     uses: './.github/workflows/release.yaml'
     with:

@@ -5,8 +5,8 @@ contents:
     - apk-tools
     - build-base
     - git
-    - python3-dev
-    - py3-pip
+    # - python3-dev
+    # - py3-pip
     - ruff
     - uv
     - wolfi-keys
