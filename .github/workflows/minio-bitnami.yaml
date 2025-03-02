@@ -2,7 +2,7 @@ name: minio-bitnami
 
 on:
   schedule:
-    - cron: "00 06 * * *"
+    - cron: "00 01 * * 1"
   push:
     branches:
       - 'main'
