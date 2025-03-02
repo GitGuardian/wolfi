@@ -1,0 +1,37 @@
+name: redis-sentinel-bitnami
+
+on:
+  schedule:
+    - cron: "00 01 * * 1"
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'images/redis-sentinel-bitnami/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+  security-events: write
+  actions: read
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        version: [latest, "7.2"]
+        include:
+          - version: latest
+            packages: ''
+          - version: "7.2"
+            packages: 'redis~7.2,redis-sentinel-bitnami-compat~7.2'
+    name: ${{ matrix.version }}
+    uses: './.github/workflows/release.yaml'
+    with:
+      tag: ${{ matrix.version }}
+      target: prod
+      packages: ${{ matrix.packages }}
+    secrets: inherit

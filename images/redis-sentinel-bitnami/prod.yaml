@@ -1,0 +1,32 @@
+include: images/apko.yaml
+
+contents:
+  packages:
+    - bash
+    - busybox
+    - ca-certificates-bundle
+    - coreutils
+    - redis
+    - redis-sentinel-bitnami-compat
+    - wolfi-baselayout
+
+accounts:
+  groups:
+    - groupname: nonroot
+      gid: 1001
+  users:
+    - username: nonroot
+      uid: 1001
+      gid: 1001
+  run-as: nonroot
+
+entrypoint:
+  command: /bin/bash -c /opt/bitnami/scripts/redis-sentinel/postunpack.sh && /opt/bitnami/scripts/redis-sentinel/entrypoint.sh && /opt/bitnami/scripts/redis-sentinel/run.sh
+
+environment:
+  BITNAMI_APP_NAME: redis
+
+annotations:
+  org.opencontainers.image.title: 'redis-sentinel-bitnami'
+  org.opencontainers.image.description: 'Redis-Sentinel-Bitnami image based on Wolfi OS'
+  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/redis-sentinel-bitnami'
