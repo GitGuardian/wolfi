@@ -7,7 +7,7 @@ on:
     branches:
       - 'main'
     paths:
-      - 'images/postgres-bitnami/**'
+      - 'images/postgres-bitnami/*.yaml'
   workflow_dispatch:
 
 permissions:

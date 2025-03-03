@@ -7,7 +7,7 @@ on:
     branches:
       - 'main'
     paths:
-      - 'images/apache-tika/**'
+      - 'images/apache-tika/*.yaml'
   workflow_dispatch:
 
 permissions:

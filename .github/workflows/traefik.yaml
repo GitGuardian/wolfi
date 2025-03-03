@@ -7,7 +7,7 @@ on:
     branches:
       - 'main'
     paths:
-      - 'images/traefik/**'
+      - 'images/traefik/*.yaml'
   workflow_dispatch:
 
 permissions:

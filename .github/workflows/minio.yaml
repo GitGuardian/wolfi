@@ -7,7 +7,7 @@ on:
     branches:
       - 'main'
     paths:
-      - 'images/minio/**'
+      - 'images/minio/*.yaml'
   workflow_dispatch:
 
 permissions:

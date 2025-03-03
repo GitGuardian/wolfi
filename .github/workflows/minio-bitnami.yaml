@@ -2,12 +2,12 @@ name: minio-bitnami
 
 on:
   schedule:
-    - cron: "00 01 * * 1"
+    - cron: "00 01 * * 1-5"
   push:
     branches:
       - 'main'
     paths:
-      - 'images/minio-bitnami/**'
+      - 'images/minio-bitnami/*.yaml'
   workflow_dispatch:
 
 permissions:

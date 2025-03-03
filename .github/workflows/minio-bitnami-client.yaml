@@ -7,7 +7,7 @@ on:
     branches:
       - 'main'
     paths:
-      - 'images/minio-bitnami-client/**'
+      - 'images/minio-bitnami-client/*.yaml'
   workflow_dispatch:
 
 permissions:

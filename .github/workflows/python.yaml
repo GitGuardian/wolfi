@@ -7,7 +7,7 @@ on:
     branches:
       - 'main'
     paths:
-      - 'images/python/**'
+      - 'images/python/*.yaml'
   workflow_dispatch:
 
 permissions:

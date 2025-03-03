@@ -48,6 +48,11 @@ on:
         type: string
         required: false
         default: 'amd64,arm64'
+      scan:
+        description: 'Enable scan'
+        type: string
+        required: false
+        default: 'true'
 
 permissions:
   contents: read
@@ -160,7 +165,8 @@ jobs:
             --oidc-provider=github-actions \
             ${{ inputs.registry }}/${{ inputs.image }}@${{ steps.digest.outputs.digest-arm64 }}
 
-      - name: Scan image
+      - if: inputs.scan == 'true'
+        name: Scan image
         id: scan
         uses: anchore/scan-action@v6
         with:
@@ -169,6 +175,7 @@ jobs:
           fail-build: 'false'
           severity-cutoff: 'high'
 
-      - uses: github/codeql-action/upload-sarif@v3
+      - if: inputs.scan == 'true'
+        uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: ${{ steps.scan.outputs.sarif }}

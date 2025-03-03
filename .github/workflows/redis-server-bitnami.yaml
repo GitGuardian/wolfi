@@ -7,7 +7,7 @@ on:
     branches:
       - 'main'
     paths:
-      - 'images/redis-server-bitnami/**'
+      - 'images/redis-server-bitnami/*.yaml'
   workflow_dispatch:
 
 permissions:
