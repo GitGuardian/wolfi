@@ -28,7 +28,7 @@ jobs:
           - version: latest
             packages: ''
           - version: "3.4"
-            packages: 'loki~3.4'
+            packages: 'loki~3.4,logcli~3.4'
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
     uses: './.github/workflows/release.yaml'
     with:

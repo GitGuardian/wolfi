@@ -5,6 +5,7 @@ contents:
     - ca-certificates-bundle
     - glibc-locale-posix
     - loki
+    - logcli
     - wolfi-baselayout
 
 entrypoint:
