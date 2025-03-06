@@ -1,6 +1,6 @@
 # helm
 
-Minimal Wolfi-based helm HTTP, reverse proxy, mail proxy, and a generic TCP/UDP proxy server
+Minimal Wolfi-based helm image.
 
 ## Pull Image
 
