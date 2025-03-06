@@ -2,11 +2,14 @@
 
 This image contains the loki application for log aggregation. loki can be used to stream, aggregate, and query logs from apps and infrastructure.
 
-## Pull Image
+## Versions
 
-```sh
-docker pull ghcr.io/gitguardian/loki:latest
-```
+| 📌 Version    | ⬇️ Pull URL                                  |
+| ------------ | ------------------------------------------- |
+| latest       | ghcr.io/gitguardian/wolfi/loki:latest       |
+| latest-shell | ghcr.io/gitguardian/wolfi/loki:latest-shell |
+| 3.4          | ghcr.io/gitguardian/wolfi/loki:3.4          |
+| 3.4-shell    | ghcr.io/gitguardian/wolfi/loki:3.4-shell    |
 
 ## ✅ Verify the Provenance
 

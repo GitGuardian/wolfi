@@ -2,11 +2,14 @@
 
 Minimal Wolfi-based traefik HTTP, reverse proxy, mail proxy, and a generic TCP/UDP proxy server
 
-## Pull Image
+## Versions
 
-```sh
-docker pull ghcr.io/gitguardian/traefik:latest
-```
+| 📌 Version    | ⬇️ Pull URL                                     |
+| ------------ | ---------------------------------------------- |
+| latest       | ghcr.io/gitguardian/wolfi/traefik:latest       |
+| latest-shell | ghcr.io/gitguardian/wolfi/traefik:latest-shell |
+| 3.3          | ghcr.io/gitguardian/wolfi/traefik:3.3          |
+| 3.3-shell    | ghcr.io/gitguardian/wolfi/traefik:3.3-shell    |
 
 ## ✅ Verify the Provenance
 

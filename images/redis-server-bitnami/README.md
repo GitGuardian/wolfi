@@ -2,11 +2,12 @@
 
 Minimal image with Redis-server-bitnami.
 
-## Pull Image
+## Versions
 
-```sh
-docker pull ghcr.io/gitguardian/redis-server-bitnami:latest
-```
+| 📌 Version | ⬇️ Pull URL                                            |
+| --------- | ----------------------------------------------------- |
+| latest    | ghcr.io/gitguardian/wolfi/redis-server-bitnami:latest |
+| 7.2       | ghcr.io/gitguardian/wolfi/redis-server-bitnami:7.2    |
 
 ## ✅ Verify the Provenance
 

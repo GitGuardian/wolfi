@@ -2,11 +2,14 @@
 
 Fluent Bit is a lightweight and high performance log processor.
 
-## Pull Image
+## Versions
 
-```sh
-docker pull ghcr.io/gitguardian/fluent-bit:latest
-```
+| 📌 Version    | ⬇️ Pull URL                                        |
+| ------------ | ------------------------------------------------- |
+| latest       | ghcr.io/gitguardian/wolfi/fluent-bit:latest       |
+| latest-shell | ghcr.io/gitguardian/wolfi/fluent-bit:latest-shell |
+| 3.2          | ghcr.io/gitguardian/wolfi/fluent-bit:3.2          |
+| 3.2-shell    | ghcr.io/gitguardian/wolfi/fluent-bit:3.2-shell    |
 
 ## ✅ Verify the Provenance
 

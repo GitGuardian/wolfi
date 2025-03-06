@@ -2,11 +2,12 @@
 
 Minimal image with Redis-sentinel-bitnami.
 
-## Pull Image
+## Versions
 
-```sh
-docker pull ghcr.io/gitguardian/redis-sentinel-bitnami:latest
-```
+| 📌 Version | ⬇️ Pull URL                                              |
+| --------- | ------------------------------------------------------- |
+| latest    | ghcr.io/gitguardian/wolfi/redis-sentinel-bitnami:latest |
+| 7.2       | ghcr.io/gitguardian/wolfi/redis-sentinel-bitnami:7.2    |
 
 ## ✅ Verify the Provenance
 

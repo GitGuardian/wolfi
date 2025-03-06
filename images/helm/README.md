@@ -2,11 +2,12 @@
 
 Minimal Wolfi-based helm image.
 
-## Pull Image
+## Versions
 
-```sh
-docker pull ghcr.io/gitguardian/helm:latest
-```
+| 📌 Version | ⬇️ Pull URL                            |
+| --------- | ------------------------------------- |
+| latest    | ghcr.io/gitguardian/wolfi/helm:latest |
+| 3.17      | ghcr.io/gitguardian/wolfi/helm:3.17   |
 
 ## ✅ Verify the Provenance
 

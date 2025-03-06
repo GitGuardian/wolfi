@@ -2,11 +2,12 @@
 
 Minimal image with Postgres-bitnami.
 
-## Pull Image
+## Versions
 
-```sh
-docker pull ghcr.io/gitguardian/postgres-bitnami:latest
-```
+| 📌 Version | ⬇️ Pull URL                                        |
+| --------- | ------------------------------------------------- |
+| latest    | ghcr.io/gitguardian/wolfi/postgres-bitnami:latest |
+| 16.8      | ghcr.io/gitguardian/wolfi/postgres-bitnami:16.8   |
 
 ## ✅ Verify the Provenance
 

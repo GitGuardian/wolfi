@@ -2,11 +2,14 @@
 
 Minimal image with Minio.
 
-## Pull Image
+## Versions
 
-```sh
-docker pull ghcr.io/gitguardian/minio:latest
-```
+| 📌 Version        | ⬇️ Pull URL                                       |
+| ---------------- | ------------------------------------------------ |
+| latest           | ghcr.io/gitguardian/wolfi/minio:latest           |
+| latest-shell     | ghcr.io/gitguardian/wolfi/minio:latest-shell     |
+| 0.20250203       | ghcr.io/gitguardian/wolfi/minio:0.20250203       |
+| 0.20250203-shell | ghcr.io/gitguardian/wolfi/minio:0.20250203-shell |
 
 ## ✅ Verify the Provenance
 

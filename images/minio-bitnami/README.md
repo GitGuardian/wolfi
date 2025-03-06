@@ -2,11 +2,12 @@
 
 Minimal image with Minio-bitnami.
 
-## Pull Image
+## Versions
 
-```sh
-docker pull ghcr.io/gitguardian/minio-bitnami:latest
-```
+| 📌 Version  | ⬇️ Pull URL                                         |
+| ---------- | -------------------------------------------------- |
+| latest     | ghcr.io/gitguardian/wolfi/minio-bitnami:latest     |
+| 0.20250203 | ghcr.io/gitguardian/wolfi/minio-bitnami:0.20250203 |
 
 ## ✅ Verify the Provenance
 

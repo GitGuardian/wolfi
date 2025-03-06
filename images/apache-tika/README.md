@@ -2,11 +2,14 @@
 
 Apache Tika extracts metadata, text, and language from documents, enabling content analysis and indexing.
 
-## Pull Image
+## Versions
 
-```sh
-docker pull ghcr.io/gitguardian/apache-tika:latest
-```
+| 📌 Version    | ⬇️ Pull URL                                         |
+| ------------ | -------------------------------------------------- |
+| latest       | ghcr.io/gitguardian/wolfi/apache-tika:latest       |
+| latest-shell | ghcr.io/gitguardian/wolfi/apache-tika:latest-shell |
+| 3.1          | ghcr.io/gitguardian/wolfi/apache-tika:3.1          |
+| 3.1-shell    | ghcr.io/gitguardian/wolfi/apache-tika:3.1-shell    |
 
 ## ✅ Verify the Provenance
 

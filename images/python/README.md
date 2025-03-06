@@ -2,11 +2,18 @@
 
 Minimal Python image based on Wolfi.
 
-## Pull Image
+## Versions
 
-```sh
-docker pull ghcr.io/gitguardian/python:latest
-```
+| 📌 Version    | ⬇️ Pull URL                                    |
+| ------------ | --------------------------------------------- |
+| latest       | ghcr.io/gitguardian/wolfi/python:latest       |
+| latest-shell | ghcr.io/gitguardian/wolfi/python:latest-shell |
+| 3.13         | ghcr.io/gitguardian/wolfi/python:3.13         |
+| 3.13-shell   | ghcr.io/gitguardian/wolfi/python:3.13-shell   |
+| 3.12         | ghcr.io/gitguardian/wolfi/python:3.12         |
+| 3.12-shell   | ghcr.io/gitguardian/wolfi/python:3.12-shell   |
+| 3.11         | ghcr.io/gitguardian/wolfi/python:3.11         |
+| 3.11-shell   | ghcr.io/gitguardian/wolfi/python:3.11-shell   |
 
 ## ✅ Verify the Provenance
 
