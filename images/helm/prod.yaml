@@ -1,0 +1,23 @@
+include: images/apko.yaml
+
+contents:
+  packages:
+    - bash
+    - busybox
+    - ca-certificates-bundle
+    - glibc-locale-posix
+    - helm
+    - helm-docs
+    - kubectl
+    - openssl
+    - wolfi-baselayout
+
+entrypoint:
+  command: /usr/bin/helm
+
+cmd: helm
+
+annotations:
+  org.opencontainers.image.title: 'helm'
+  org.opencontainers.image.description: 'Helm image based on Wolfi OS'
+  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/helm'

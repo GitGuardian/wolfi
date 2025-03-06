@@ -1,0 +1,38 @@
+name: helm
+
+on:
+  schedule:
+    - cron: "00 01 * * 1"
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'images/helm/*.yaml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+  security-events: write
+  actions: read
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        version: [latest, "3.17"]
+        variant: [prod]
+        include:
+          - version: latest
+            packages: ''
+          - version: "3.17"
+            packages: 'helm~3.17,kubectl~1.31'
+    name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
+    uses: './.github/workflows/release.yaml'
+    with:
+      tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
+      target: ${{ matrix.variant }}
+      packages: ${{ matrix.packages }}
+    secrets: inherit

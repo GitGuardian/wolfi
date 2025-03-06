@@ -20,6 +20,7 @@
 | ---------------------------------------------------------- | -------------------------------------------------------------- |
 | [apache-tika](./images/apache-tika/)                       | `docker pull ghcr.io/gitguardian/wolfi/apache-tika`            |
 | [fluent-bit](./images/fluent-bit/)                         | `docker pull ghcr.io/gitguardian/wolfi/fluent-bit`             |
+| [helm](./images/helm/)                                     | `docker pull ghcr.io/gitguardian/wolfi/helm`                   |
 | [loki](./images/loki/)                                     | `docker pull ghcr.io/gitguardian/wolfi/loki`                   |
 | [minio](./images/loki/)                                    | `docker pull ghcr.io/gitguardian/wolfi/minio`                  |
 | [minio-bitnami](./images/minio-bitnami/)                   | `docker pull ghcr.io/gitguardian/wolfi/minio-bitnami`          |
