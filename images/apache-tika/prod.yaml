@@ -11,7 +11,7 @@ contents:
     - wolfi-baselayout
 
 entrypoint:
-  command: /bin/sh -c exec java -cp "/tika-server-standard.jar:/tika-extras/*" org.apache.tika.server.core.TikaServerCli -h 0.0.0.0 $0 $@
+  command: /bin/sh -c 'exec java -cp "/tika-server-standard.jar:/tika-extras/*" org.apache.tika.server.core.TikaServerCli -h 0.0.0.0 $0 $@'
 
 annotations:
   org.opencontainers.image.title: 'apache-tika'
