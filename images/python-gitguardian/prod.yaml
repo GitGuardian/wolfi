@@ -1,0 +1,25 @@
+include: images/apko.yaml
+
+contents:
+  packages:
+    - ca-certificates-bundle
+    - cairo
+    - curl
+    - font-linux-libertine
+    - font-noto-emoji
+    - fontconfig-config
+    - git
+    - glibc-locale-posix
+    - pango
+    - ripgrep
+    - tini
+    - wolfi-baselayout
+    # - python3
+
+entrypoint:
+  command: /usr/bin/python
+
+annotations:
+  org.opencontainers.image.title: 'python-gitguadian'
+  org.opencontainers.image.description: 'Python image based on Wolfi OS for GitGuardian'
+  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/python-gitguardian'

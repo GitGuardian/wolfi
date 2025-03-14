@@ -1,0 +1,76 @@
+name: python-gitguardian
+
+on:
+  schedule:
+    - cron: "00 01 * * 1"
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'images/python-gitguardian/*.yaml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+  security-events: write
+  actions: read
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        version: [latest, "3.13", "3.12", "3.11"]
+        variant: [prod, shell, dev]
+        include:
+          - version: "latest"
+            variant: prod
+            packages: 'python3'
+          - version: "latest"
+            variant: shell
+            packages: 'python3'
+          - version: "latest"
+            variant: dev
+            packages: 'python3,python3-dev,py3-pip'
+
+            # 3.13
+          - version: "3.13"
+            variant: prod
+            packages: 'python-3.13'
+          - version: "3.13"
+            variant: shell
+            packages: 'python-3.13'
+          - version: "3.13"
+            variant: dev
+            packages: 'python-3.13,python-3.13-dev,py3.13-pip'
+
+          # 3.12
+          - version: "3.12"
+            variant: prod
+            packages: 'python-3.12'
+          - version: "3.12"
+            variant: shell
+            packages: 'python-3.12'
+          - version: "3.12"
+            variant: dev
+            packages: 'python-3.12,python-3.12-dev,py3.12-pip'
+
+          # 3.11
+          - version: "3.11"
+            variant: prod
+            packages: 'python-3.11'
+          - version: "3.11"
+            variant: shell
+            packages: 'python-3.11'
+          - version: "3.11"
+            variant: dev
+            packages: 'python-3.11,python-3.11-dev,py3.11-pip'
+    name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
+    uses: './.github/workflows/release.yaml'
+    with:
+      tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
+      target: ${{ matrix.variant }}
+      packages: ${{ matrix.packages }}
+    secrets: inherit

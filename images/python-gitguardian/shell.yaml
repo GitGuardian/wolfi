@@ -1,0 +1,9 @@
+include: images/python-gitguardian/prod.yaml
+
+contents:
+  packages:
+    - bash
+    - busybox
+    - curl
+    - openssl
+    - vim

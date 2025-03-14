@@ -28,6 +28,7 @@
 | [nginx](./images/nginx/)                                   | `docker pull ghcr.io/gitguardian/wolfi/nginx`                  |
 | [postgres-bitnami](./images/postgres-bitnami/)             | `docker pull ghcr.io/gitguardian/wolfi/postgres-bitnami`       |
 | [python](./images/python/)                                 | `docker pull ghcr.io/gitguardian/wolfi/python`                 |
+| [python-gitguardian](./images/python-gitguardian/)         | `docker pull ghcr.io/gitguardian/wolfi/python-gitguardian`     |
 | [redis-sentinel-bitnami](./images/redis-sentinel-bitnami/) | `docker pull ghcr.io/gitguardian/wolfi/redis-sentinel-bitnami` |
 | [redis-server-bitnami](./images/redis-server-bitnami/)     | `docker pull ghcr.io/gitguardian/wolfi/redis-server-bitnami`   |
 | [traefik](./images/traefik/)                               | `docker pull ghcr.io/gitguardian/wolfi/traefik`                |
