@@ -10,6 +10,7 @@ contents:
     - fontconfig-config
     - git
     - glibc-locale-posix
+    - libgcrypt
     - pango
     - ripgrep
     - tini
