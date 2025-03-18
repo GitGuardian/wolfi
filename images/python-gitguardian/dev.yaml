@@ -5,10 +5,8 @@ contents:
     - apk-tools
     - build-base
     - git
-    - libxml2-dev
     - ruff
     - uv
     - wolfi-keys
-    - xmlsec-dev
     # - py3-pip
     # - python3-dev
