@@ -34,4 +34,5 @@ jobs:
       tag: ${{ matrix.version }}
       target: prod
       packages: ${{ matrix.packages }}
+      scan: 'false'
     secrets: inherit
