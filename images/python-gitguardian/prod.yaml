@@ -13,6 +13,7 @@ contents:
     - libgcrypt
     - pango
     - ripgrep
+    - src-fingerprint
     - tini
     - wolfi-baselayout
     # - python3
