@@ -28,6 +28,7 @@
 | [nginx](./images/nginx/)                                   | `docker pull ghcr.io/gitguardian/wolfi/nginx`                  |
 | [postgres-bitnami](./images/postgres-bitnami/)             | `docker pull ghcr.io/gitguardian/wolfi/postgres-bitnami`       |
 | [prometheus](./images/prometheus/)                         | `docker pull ghcr.io/gitguardian/wolfi/prometheus`             |
+| [prometheus-adapter](./images/prometheus-adapter/)         | `docker pull ghcr.io/gitguardian/wolfi/prometheus-adapter`     |
 | [python](./images/python/)                                 | `docker pull ghcr.io/gitguardian/wolfi/python`                 |
 | [python-gitguardian](./images/python-gitguardian/)         | `docker pull ghcr.io/gitguardian/wolfi/python-gitguardian`     |
 | [redis-sentinel-bitnami](./images/redis-sentinel-bitnami/) | `docker pull ghcr.io/gitguardian/wolfi/redis-sentinel-bitnami` |

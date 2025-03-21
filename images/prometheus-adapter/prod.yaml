@@ -1,0 +1,16 @@
+include: images/apko.yaml
+
+contents:
+  packages:
+    - ca-certificates-bundle
+    - glibc-locale-posix
+    - prometheus-adapter
+    - wolfi-baselayout
+
+entrypoint:
+  command: /usr/bin/adapter
+
+annotations:
+  org.opencontainers.image.title: 'prometheus-adapter'
+  org.opencontainers.image.description: 'prometheus-adapter image based on Wolfi OS'
+  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/prometheus-adapter'
