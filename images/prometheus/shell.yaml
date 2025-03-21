@@ -1,0 +1,8 @@
+include: images/prometheus/prod.yaml
+
+contents:
+  packages:
+    - bash
+    - busybox
+    - curl
+    - vim
