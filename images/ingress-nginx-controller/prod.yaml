@@ -1,0 +1,35 @@
+include: images/apko.yaml
+
+contents:
+  packages:
+    - abseil-cpp
+    - busybox
+    - ca-certificates-bundle
+    - curl
+    - glibc-locale-posix
+    - grpc
+    - icu-libs
+    - ingress-nginx-controller
+    - msgpack-cxx
+    - wolfi-baselayout
+
+entrypoint:
+  command: /nginx-ingress-controller
+
+cmd: /usr/bin/dumb-init ---
+
+work-dir: /etc/nginx
+
+environment:
+  LUA_CPATH: /usr/lib/lua/5.1/?.so;/usr/lib/lua/?/?.so;/usr/lib/lua/?.so;/usr/lib/lua/?.lua;
+  LUA_PATH: /usr/share/lua/5.1/?.lua;/usr/lib/lua/?.lua;/usr/lib/lua/?.lua;/usr/share/lua/?.lua
+  PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/luajit/bin
+  SSL_CERT_FILE: /etc/ssl/certs/ca-certificates.crt
+
+accounts:
+  run-as: root
+
+annotations:
+  org.opencontainers.image.title: 'ingress-nginx-controller'
+  org.opencontainers.image.description: 'ingress-nginx-controller image based on Wolfi OS'
+  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/ingress-nginx-controller'

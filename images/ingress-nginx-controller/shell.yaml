@@ -1,0 +1,9 @@
+include: images/ingress-nginx-controller/prod.yaml
+
+contents:
+  packages:
+    - bash
+    - busybox
+    - curl
+    - openssl
+    - vim
