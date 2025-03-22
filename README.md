@@ -21,6 +21,7 @@
 | [apache-tika](./images/apache-tika/)                           | `docker pull ghcr.io/gitguardian/wolfi/apache-tika`              |
 | [fluent-bit](./images/fluent-bit/)                             | `docker pull ghcr.io/gitguardian/wolfi/fluent-bit`               |
 | [helm](./images/helm/)                                         | `docker pull ghcr.io/gitguardian/wolfi/helm`                     |
+| [infra-tools](./images/infra-tools/)                           | `docker pull ghcr.io/gitguardian/wolfi/infra-tools`              |
 | [ingress-nginx-controller](./images/ingress-nginx-controller/) | `docker pull ghcr.io/gitguardian/wolfi/ingress-nginx-controller` |
 | [loki](./images/loki/)                                         | `docker pull ghcr.io/gitguardian/wolfi/loki`                     |
 | [minio](./images/loki/)                                        | `docker pull ghcr.io/gitguardian/wolfi/minio`                    |

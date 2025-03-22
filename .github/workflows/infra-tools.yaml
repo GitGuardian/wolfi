@@ -1,0 +1,36 @@
+name: infra-tools
+
+on:
+  schedule:
+    - cron: "00 01 * * 1"
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'images/infra-tools/*.yaml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+  security-events: write
+  actions: read
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        version: [latest]
+        variant: [prod, dev]
+        include:
+          - version: latest
+            packages: ''
+    name: ${{ matrix.version }}${{ matrix.variant == 'dev' && '-dev' || '' }}
+    uses: './.github/workflows/release.yaml'
+    with:
+      tag: ${{ matrix.version }}${{ matrix.variant == 'dev' && '-dev' || '' }}
+      target: ${{ matrix.variant }}
+      packages: ${{ matrix.packages }}
+    secrets: inherit
