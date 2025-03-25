@@ -27,7 +27,7 @@ jobs:
           - version: latest
             packages: ''
           - version: "16.8"
-            packages: 'postgresql~16.8,postgresql-client~16.8,postgresql-contrib~16.8,postgresql-oci-entrypoint~16.8,postgresql-bitnami-compat~16.4'
+            packages: 'postgresql~16.8,postgresql-client~16.8,postgresql-contrib~16.8,postgresql-oci-entrypoint~16.8,postgresql-bitnami-compat~16.4,pgvector-16~0.8'
     name: ${{ matrix.version }}
     uses: './.github/workflows/release.yaml'
     with:
