@@ -10,3 +10,6 @@ contents:
     - ruff
     - uv
     - wolfi-keys
+
+accounts:
+  run-as: root

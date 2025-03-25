@@ -27,7 +27,7 @@ contents:
     - wolfi-baselayout
     - yq
 
-cmd: /bin/sh -l
+cmd: /usr/bin/sh -l
 
 annotations:
   org.opencontainers.image.title: 'infra-tools'

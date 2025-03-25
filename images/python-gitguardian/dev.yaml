@@ -10,3 +10,6 @@ contents:
     - wolfi-keys
     # - py3-pip
     # - python3-dev
+
+accounts:
+  run-as: root

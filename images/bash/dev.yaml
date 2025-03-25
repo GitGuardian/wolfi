@@ -1,13 +1,13 @@
-include: images/infra-tools/prod.yaml
+include: images/bash/prod.yaml
 
 contents:
   packages:
     - apk-tools
     - build-base
     - git
-    - py3-pip
-    - python3-dev
     - vim
+    - wget
+    - wolfi-keys
 
 accounts:
   run-as: root
