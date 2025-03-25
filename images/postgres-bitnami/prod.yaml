@@ -16,13 +16,13 @@ contents:
 
 accounts:
   groups:
-    - groupname: nonroot
+    - groupname: bitnami
       gid: 1001
   users:
-    - username: nonroot
+    - username: bitnami
       uid: 1001
       gid: 1001
-  run-as: nonroot
+  run-as: bitnami
 
 entrypoint:
   command: /opt/bitnami/scripts/postgresql/entrypoint.sh
@@ -33,6 +33,28 @@ environment:
   BITNAMI_APP_NAME: postgresql
   LANG: en_US.UTF-8
   PGDATA: /opt/bitnami/postgresql/data
+
+paths:
+  - path: /opt/bitnami/postgresql/conf
+    type: directory
+    permissions: 0o770
+    uid: 1001
+    gid: 0
+  - path: /opt/bitnami/postgresql/data
+    type: directory
+    permissions: 0o770
+    uid: 1001
+    gid: 0
+  - path: /opt/bitnami/postgresql/logs
+    type: directory
+    permissions: 0o770
+    uid: 1001
+    gid: 0
+  - path: /opt/bitnami/postgresql/tmp
+    type: directory
+    permissions: 0o770
+    uid: 1001
+    gid: 0
 
 annotations:
   org.opencontainers.image.title: 'postgres-bitnami'
