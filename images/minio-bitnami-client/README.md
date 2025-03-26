@@ -4,10 +4,11 @@ Minimal image with Minio-bitnami-client.
 
 ## Versions
 
-| 📌 Version  | ⬇️ Pull URL                                                |
-| ---------- | --------------------------------------------------------- |
-| latest     | ghcr.io/gitguardian/wolfi/minio-bitnami-client:latest     |
-| 0.20250215 | ghcr.io/gitguardian/wolfi/minio-bitnami-client:0.20250215 |
+| 📌 Version  | ⬇️ Pull URL                                                | Support |
+| ---------- | --------------------------------------------------------- | ------- |
+| latest     | ghcr.io/gitguardian/wolfi/minio-bitnami-client:latest     | ✅       |
+| 0.20250312 | ghcr.io/gitguardian/wolfi/minio-bitnami-client:0.20250312 | ✅       |
+| 0.20250215 | ghcr.io/gitguardian/wolfi/minio-bitnami-client:0.20250215 | ❌       |
 
 ## ✅ Verify the Provenance
 
