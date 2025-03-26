@@ -1,8 +1,9 @@
-include: images/bash/prod.yaml
+include: images/shell/prod.yaml
 
 contents:
   packages:
     - apk-tools
+    - build-base
     - git
     - vim
     - wget

@@ -36,4 +36,5 @@
 | [python-gitguardian](./images/python-gitguardian/)             | `docker pull ghcr.io/gitguardian/wolfi/python-gitguardian`       |
 | [redis-sentinel-bitnami](./images/redis-sentinel-bitnami/)     | `docker pull ghcr.io/gitguardian/wolfi/redis-sentinel-bitnami`   |
 | [redis-server-bitnami](./images/redis-server-bitnami/)         | `docker pull ghcr.io/gitguardian/wolfi/redis-server-bitnami`     |
+| [shell](./images/shell/)                                       | `docker pull ghcr.io/gitguardian/wolfi/shell`                    |
 | [traefik](./images/traefik/)                                   | `docker pull ghcr.io/gitguardian/wolfi/traefik`                  |
