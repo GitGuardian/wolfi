@@ -3,6 +3,7 @@ include: images/apko.yaml
 contents:
   packages:
     - ca-certificates-bundle
+    - dockerize
     - glibc-locale-posix
     - loki
     - logcli
