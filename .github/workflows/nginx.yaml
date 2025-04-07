@@ -2,7 +2,7 @@ name: nginx
 
 on:
   schedule:
-    - cron: "00 01 * * 1"
+    - cron: "00 01 * * 1-5"
   push:
     branches:
       - 'main'
@@ -23,7 +23,7 @@ jobs:
     strategy:
       matrix:
         version: [latest, "1.27", "1.26"]
-        variant: [prod, shell]
+        variant: [prod, shell, dev]
         include:
           - version: latest
             packages: ''
@@ -31,10 +31,10 @@ jobs:
             packages: 'nginx~1.27,nginx-package-config~1.27,nginx-mod-stream~1.27'
           - version: "1.26"
             packages: 'nginx~1.26,nginx-package-config~1.26,nginx-mod-stream~1.26'
-    name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
+    name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
-      tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
+      tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
       target: ${{ matrix.variant }}
       packages: ${{ matrix.packages }}
     secrets: inherit

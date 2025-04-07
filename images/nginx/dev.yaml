@@ -1,0 +1,14 @@
+include: images/nginx/prod.yaml
+
+contents:
+  packages:
+    - apk-tools
+    - curl
+    - git
+    - openssl
+    - vim
+    - wget
+    - wolfi-keys
+
+accounts:
+  run-as: root
