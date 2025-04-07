@@ -4,11 +4,29 @@ contents:
   packages:
     - ca-certificates-bundle
     - glibc-locale-posix
+    - ld-linux
+    - libgcc
     - prometheus
     - wolfi-baselayout
 
+paths:
+  - path: /prometheus
+    type: directory
+    permissions: 0o770
+    uid: 65532
+    gid: 0
+  - path: /etc/prometheus
+    type: directory
+    permissions: 0o770
+    uid: 65532
+    gid: 0
+
 entrypoint:
-  command: prometheus
+  command: /usr/bin/prometheus
+
+cmd: --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus
+
+work-dir: /prometheus
 
 annotations:
   org.opencontainers.image.title: 'prometheus'
