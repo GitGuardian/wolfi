@@ -1,13 +1,9 @@
-include: images/nginx/prod.yaml
+include: images/nginx/shell.yaml
 
 contents:
   packages:
     - apk-tools
-    - curl
     - git
-    - openssl
-    - vim
-    - wget
     - wolfi-keys
 
 accounts:
