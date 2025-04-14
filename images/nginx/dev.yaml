@@ -4,6 +4,7 @@ contents:
   packages:
     - apk-tools
     - git
+    - vim
     - wolfi-keys
 
 accounts:

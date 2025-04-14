@@ -6,5 +6,4 @@ contents:
     - busybox
     - curl
     - openssl
-    - vim
     - wget

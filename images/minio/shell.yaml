@@ -5,4 +5,4 @@ contents:
     - bash
     - busybox
     - curl
-    - vim
+    - wget

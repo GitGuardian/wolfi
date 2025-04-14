@@ -9,6 +9,7 @@ contents:
     # - py3-pip
     - ruff
     - uv
+    - vim
     - wolfi-keys
 
 accounts:

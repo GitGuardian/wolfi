@@ -11,6 +11,7 @@ contents:
     - glibc-locale-posix
     - jq
     - netcat-openbsd
+    - wget
     - wolfi-baselayout
     - yq
 
