@@ -7,6 +7,7 @@ on:
     branches:
       - 'main'
     paths:
+      - .github/workflows/fluent-bit.yaml
       - 'images/fluent-bit/*.yaml'
   workflow_dispatch:
 
@@ -22,13 +23,15 @@ jobs:
   publish:
     strategy:
       matrix:
-        version: [latest, "3.2"]
+        version: [latest, "4.0", "4.0.0"]
         variant: [prod, shell]
         include:
           - version: latest
             packages: ''
-          - version: "3.2"
-            packages: 'fluent-bit~3.2'
+          - version: "4.0"
+            packages: 'fluent-bit~4.0'
+          - version: "4.0.0"
+            packages: 'fluent-bit~4.0.0'
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
     uses: './.github/workflows/release.yaml'
     with:

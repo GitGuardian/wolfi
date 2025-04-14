@@ -8,8 +8,10 @@ Minimal image with Minio.
 | ---------------- | ------------------------------------------------ | ------- |
 | latest           | ghcr.io/gitguardian/wolfi/minio:latest           | ✅       |
 | latest-shell     | ghcr.io/gitguardian/wolfi/minio:latest-shell     | ✅       |
-| 0.20250312       | ghcr.io/gitguardian/wolfi/minio:0.20250312       | ✅       |
-| 0.20250312-shell | ghcr.io/gitguardian/wolfi/minio:0.20250312-shell | ✅       |
+| 0.20250408       | ghcr.io/gitguardian/wolfi/minio:0.20250408       | ✅       |
+| 0.20250408-shell | ghcr.io/gitguardian/wolfi/minio:0.20250408-shell | ✅       |
+| 0.20250312       | ghcr.io/gitguardian/wolfi/minio:0.20250203       | ❌       |
+| 0.20250312-shell | ghcr.io/gitguardian/wolfi/minio:0.20250203-shell | ❌       |
 | 0.20250203       | ghcr.io/gitguardian/wolfi/minio:0.20250203       | ❌       |
 | 0.20250203-shell | ghcr.io/gitguardian/wolfi/minio:0.20250203-shell | ❌       |
 

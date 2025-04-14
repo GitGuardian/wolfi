@@ -7,7 +7,8 @@ Minimal image with Minio-bitnami.
 | 📌 Version  | ⬇️ Pull URL                                         | Support |
 | ---------- | -------------------------------------------------- | ------- |
 | latest     | ghcr.io/gitguardian/wolfi/minio-bitnami:latest     | ✅       |
-| 0.20250312 | ghcr.io/gitguardian/wolfi/minio-bitnami:0.20250312 | ✅       |
+| 0.20250408 | ghcr.io/gitguardian/wolfi/minio-bitnami:0.20250408 | ✅       |
+| 0.20250312 | ghcr.io/gitguardian/wolfi/minio-bitnami:0.20250203 | ❌       |
 | 0.20250203 | ghcr.io/gitguardian/wolfi/minio-bitnami:0.20250203 | ❌       |
 
 ## ✅ Verify the Provenance

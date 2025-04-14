@@ -7,6 +7,7 @@ on:
     branches:
       - 'main'
     paths:
+      - .github/workflows/minio-bitnami-client.yaml
       - 'images/minio-bitnami-client/*.yaml'
   workflow_dispatch:
 
@@ -23,12 +24,12 @@ jobs:
     strategy:
       matrix:
         # https://images.chainguard.dev/directory/image/minio-bitnami-client/versions
-        version: [latest, "0.20250312"]
+        version: [latest, "0.20250408"]
         include:
           - version: latest
             packages: ''
-          - version: "0.20250312"
-            packages: 'mc-bitnami-2025-compat~0.20250312,mc~0.20250312'
+          - version: "0.20250408"
+            packages: 'mc-bitnami-2025-compat~0.20250408,mc~0.20250408'
     name: ${{ matrix.version }}
     uses: './.github/workflows/release.yaml'
     with:

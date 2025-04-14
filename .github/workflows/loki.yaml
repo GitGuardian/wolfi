@@ -7,6 +7,7 @@ on:
     branches:
       - 'main'
     paths:
+      - .github/workflows/loki.yaml
       - 'images/loki/*.yaml'
   workflow_dispatch:
 
@@ -22,13 +23,15 @@ jobs:
   publish:
     strategy:
       matrix:
-        version: [latest, "3.4"]
+        version: [latest, "3.4", "3.4.3"]
         variant: [prod, shell]
         include:
           - version: latest
             packages: ''
           - version: "3.4"
             packages: 'loki~3.4,logcli~3.4'
+          - version: "3.4.3"
+            packages: 'loki~3.4.3,logcli~3.4.3'
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
