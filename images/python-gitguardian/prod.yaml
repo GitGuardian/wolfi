@@ -18,8 +18,33 @@ contents:
     - wolfi-baselayout
     # - python3
 
+paths:
+  - path: /app
+    type: directory
+    permissions: 0o755
+    uid: 65532
+    gid: 65532
+  - path: /resources
+    type: directory
+    permissions: 0o755
+    uid: 65532
+    gid: 65532
+  - path: /cache
+    type: directory
+    permissions: 0o777
+    uid: 65532
+    gid: 65532
+  - path: /tmp/prometheus_multiproc_dir
+    type: directory
+    permissions: 0o777
+    uid: 65532
+    gid: 65532
+
 entrypoint:
   command: /usr/bin/python
+
+environment:
+  PROMETHEUS_MULTIPROC_DIR: /tmp/prometheus_multiproc_dir
 
 annotations:
   org.opencontainers.image.title: 'python-gitguadian'
