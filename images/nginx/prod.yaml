@@ -9,6 +9,45 @@ contents:
     - nginx-mod-stream
     - wolfi-baselayout
 
+accounts:
+  groups:
+    - groupname: nginx
+      gid: 65532
+  users:
+    - username: nginx
+      uid: 65532
+      gid: 65532
+  run-as: nginx
+
+paths:
+  - path: /var/lib/nginx
+    type: directory
+    permissions: 0o755
+    uid: 65532
+    gid: 65532
+  - path: /var/lib/nginx/html
+    type: directory
+    permissions: 0o755
+    uid: 65532
+    gid: 65532
+  - path: /var/lib/nginx/logs
+    type: directory
+    permissions: 0o755
+    uid: 65532
+    gid: 65532
+  - path: /var/lib/nginx/tmp
+    type: directory
+    permissions: 0o777
+    uid: 65532
+    gid: 65532
+  - path: /var/run
+    type: directory
+    permissions: 0o777
+    uid: 65532
+    gid: 65532
+
+work-dir: /home/nginx
+
 entrypoint:
   command: /usr/sbin/nginx
 
