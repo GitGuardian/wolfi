@@ -5,5 +5,6 @@ contents:
     - bash
     - busybox
     - curl
+    - netcat-openbsd
     - openssl
     - wget
