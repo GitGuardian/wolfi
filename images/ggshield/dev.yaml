@@ -1,0 +1,14 @@
+include: images/ggshield/prod.yaml
+
+contents:
+  packages:
+    - apk-tools
+    - build-base
+    - git
+    - uv
+    - vim
+    - wget
+    - wolfi-keys
+
+accounts:
+  run-as: root
