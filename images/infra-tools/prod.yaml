@@ -18,8 +18,10 @@ contents:
     - helm
     - helm-docs
     - jq
+    - k3d
     - k9s
     - kubectl
+    - openssh-client
     - openssl
     - opentofu
     - py3-ansible-core
