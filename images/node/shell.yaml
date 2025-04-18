@@ -1,0 +1,9 @@
+include: images/node/prod.yaml
+
+contents:
+  packages:
+    - bash
+    - busybox
+    - curl
+    - openssl
+    - wget

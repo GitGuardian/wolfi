@@ -1,0 +1,18 @@
+include: images/node/shell.yaml
+
+contents:
+  packages:
+    - apk-tools
+    - build-base
+    - gettext
+    - git
+    - minify
+    - npm
+    - ruff
+    - vim
+    - vite
+    - wolfi-keys
+    - yarn
+
+accounts:
+  run-as: root

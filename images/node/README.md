@@ -1,23 +1,20 @@
 # Python
 
-Minimal Python image based on Wolfi.
+Minimal Node image based on Wolfi.
 
 ## Versions
 
-| 📌 Version    | ⬇️ Pull URL                                    |
-| ------------ | --------------------------------------------- |
-| latest       | ghcr.io/gitguardian/wolfi/python:latest       |
-| latest-shell | ghcr.io/gitguardian/wolfi/python:latest-shell |
-| latest-dev   | ghcr.io/gitguardian/wolfi/python:latest-dev   |
-| 3.13         | ghcr.io/gitguardian/wolfi/python:3.13         |
-| 3.13-shell   | ghcr.io/gitguardian/wolfi/python:3.13-shell   |
-| 3.13-dev     | ghcr.io/gitguardian/wolfi/python:3.13-dev     |
-| 3.12         | ghcr.io/gitguardian/wolfi/python:3.12         |
-| 3.12-shell   | ghcr.io/gitguardian/wolfi/python:3.12-shell   |
-| 3.12-dev     | ghcr.io/gitguardian/wolfi/python:3.12-dev     |
-| 3.11         | ghcr.io/gitguardian/wolfi/python:3.11         |
-| 3.11-shell   | ghcr.io/gitguardian/wolfi/python:3.11-shell   |
-| 3.11-dev     | ghcr.io/gitguardian/wolfi/python:3.11-dev     |
+| 📌 Version    | ⬇️ Pull URL                                  |
+| ------------ | ------------------------------------------- |
+| latest       | ghcr.io/gitguardian/wolfi/node:latest       |
+| latest-shell | ghcr.io/gitguardian/wolfi/node:latest-shell |
+| latest-dev   | ghcr.io/gitguardian/wolfi/node:latest-dev   |
+| 22           | ghcr.io/gitguardian/wolfi/node:22           |
+| 22-shell     | ghcr.io/gitguardian/wolfi/node:22-shell     |
+| 22-dev       | ghcr.io/gitguardian/wolfi/node:22-dev       |
+| 20           | ghcr.io/gitguardian/wolfi/node:20           |
+| 20-shell     | ghcr.io/gitguardian/wolfi/node:20-shell     |
+| 20-dev       | ghcr.io/gitguardian/wolfi/node:20-dev       |
 
 ## ✅ Verify the Provenance
 
@@ -28,7 +25,7 @@ GitHub CLI ([gh](https://cli.github.com/)) can be used to retrieve the build pro
 ```shell
 gh attestation verify \
   --owner gitguardian \
-  oci://ghcr.io/gitguardian/wolfi/python:latest
+  oci://ghcr.io/gitguardian/wolfi/node:latest
 ```
 
 - **Shell image**
@@ -36,7 +33,7 @@ gh attestation verify \
 ```shell
 gh attestation verify \
   --owner gitguardian \
-  oci://ghcr.io/gitguardian/wolfi/python:latest-shell
+  oci://ghcr.io/gitguardian/wolfi/node:latest-shell
 ```
 
 ## 📦 **Image Verification**
@@ -53,7 +50,7 @@ To ensure the image is authentic and has not been tampered with, use the followi
 cosign verify \
   --certificate-oidc-issuer=https://token.actions.githubusercontent.com \
   --certificate-identity=https://github.com/GitGuardian/wolfi/.github/workflows/release.yaml@refs/heads/main \
-  ghcr.io/gitguardian/wolfi/python:latest | jq
+  ghcr.io/gitguardian/wolfi/node:latest | jq
 ```
 
 - **Shell image**
@@ -62,7 +59,7 @@ cosign verify \
 cosign verify \
   --certificate-oidc-issuer=https://token.actions.githubusercontent.com \
   --certificate-identity=https://github.com/GitGuardian/wolfi/.github/workflows/release.yaml@refs/heads/main \
-  ghcr.io/gitguardian/wolfi/python:latest-shell | jq
+  ghcr.io/gitguardian/wolfi/node:latest-shell | jq
 ```
 
 ### 📦 **Image SBOMs**
@@ -79,7 +76,7 @@ cosign verify-attestation \
   --type=https://spdx.dev/Document \
   --certificate-oidc-issuer=https://token.actions.githubusercontent.com \
   --certificate-identity=https://github.com/GitGuardian/wolfi/.github/workflows/release.yaml@refs/heads/main \
-  ghcr.io/gitguardian/wolfi/python:latest
+  ghcr.io/gitguardian/wolfi/node:latest
 ```
 
 - **Shell image**
@@ -89,13 +86,13 @@ cosign verify-attestation \
   --type=https://spdx.dev/Document \
   --certificate-oidc-issuer=https://token.actions.githubusercontent.com \
   --certificate-identity=https://github.com/GitGuardian/wolfi/.github/workflows/release.yaml@refs/heads/main \
-  ghcr.io/gitguardian/wolfi/python:latest-shell
+  ghcr.io/gitguardian/wolfi/node:latest-shell
 ```
 
 This will pull in the signature for the attestation specified by the --type parameter, which in this case is the SPDX attestation. You will receive output that verifies the SBOM attestation signature in cosign's transparency log:
 
 ```shell
-Verification for ghcr.io/gitguardian/wolfi/python:latest --
+Verification for ghcr.io/gitguardian/wolfi/node:latest --
 The following checks were performed on each of these signatures:
   - The cosign claims were validated
   - Existence of the claims in the transparency log was verified offline
@@ -104,7 +101,7 @@ Certificate subject: https://github.com/GitGuardian/wolfi/.github/workflows/rele
 Certificate issuer URL: https://token.actions.githubusercontent.com
 GitHub Workflow Trigger: push
 GitHub Workflow SHA: ced6b3cfab1341509de55bff7c0389ce81f73aae
-GitHub Workflow Name: python
+GitHub Workflow Name: node
 GitHub Workflow Repository: GitGuardian/wolfi
 GitHub Workflow Ref: refs/heads/main
 ...
@@ -112,7 +109,7 @@ GitHub Workflow Ref: refs/heads/main
 
 #### ✅ Download the Image SBOM Attestations
 
-To download an attestation, use the `cosign` download attestation command and provide both the predicate type and the build platform. For example, the following command will obtain the SBOM for the python image on `linux/amd64`:
+To download an attestation, use the `cosign` download attestation command and provide both the predicate type and the build platform. For example, the following command will obtain the SBOM for the node image on `linux/amd64`:
 
 - **Production image**
 
@@ -120,7 +117,7 @@ To download an attestation, use the `cosign` download attestation command and pr
 cosign download attestation \
   --platform=linux/amd64 \
   --predicate-type=https://spdx.dev/Document \
-  ghcr.io/gitguardian/wolfi/python:latest | jq -r .payload | base64 -d | jq .predicate
+  ghcr.io/gitguardian/wolfi/node:latest | jq -r .payload | base64 -d | jq .predicate
 ```
 
 - **Shell image**
@@ -129,5 +126,5 @@ cosign download attestation \
 cosign download attestation \
   --platform=linux/amd64 \
   --predicate-type=https://spdx.dev/Document \
-  ghcr.io/gitguardian/wolfi/python:latest-shell | jq -r .payload | base64 -d | jq .predicate
+  ghcr.io/gitguardian/wolfi/node:latest-shell | jq -r .payload | base64 -d | jq .predicate
 ```

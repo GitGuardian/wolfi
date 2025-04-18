@@ -30,6 +30,7 @@
 | [minio-bitnami](./images/minio-bitnami/)                       | `docker pull ghcr.io/gitguardian/wolfi/minio-bitnami`            |
 | [minio-bitnami-client](./images/minio-bitnami-client/)         | `docker pull ghcr.io/gitguardian/wolfi/minio-bitnami-client`     |
 | [nginx](./images/nginx/)                                       | `docker pull ghcr.io/gitguardian/wolfi/nginx`                    |
+| [node](./images/node/)                                         | `docker pull ghcr.io/gitguardian/wolfi/node`                     |
 | [prometheus](./images/prometheus/)                             | `docker pull ghcr.io/gitguardian/wolfi/prometheus`               |
 | [prometheus-adapter](./images/prometheus-adapter/)             | `docker pull ghcr.io/gitguardian/wolfi/prometheus-adapter`       |
 | [python](./images/python/)                                     | `docker pull ghcr.io/gitguardian/wolfi/python`                   |
