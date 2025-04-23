@@ -25,26 +25,11 @@ jobs:
       matrix:
         version: [latest, "22", "20", "20.10"]
         variant: [prod, shell, dev]
-        include:
-          - version: "latest"
-            packages: ''
-
-          # 22
-          - version: "22"
-            packages: 'nodejs~22'
-
-          # 20
-          - version: "20"
-            packages: 'nodejs~20'
-
-          # 20.10
-          - version: "20.10"
-            packages: 'nodejs~20.10'
-
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
       tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
       target: ${{ matrix.variant }}
-      packages: ${{ matrix.packages }}
+      packages: >-
+        ${{ matrix.version != 'latest' && format('nodejs~{0}', matrix.version) || '' }}
     secrets: inherit

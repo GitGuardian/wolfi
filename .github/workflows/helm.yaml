@@ -25,15 +25,11 @@ jobs:
       matrix:
         version: [latest, "3.17"]
         variant: [prod]
-        include:
-          - version: latest
-            packages: ''
-          - version: "3.17"
-            packages: 'helm~3.17,kubectl~1.31'
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
       tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
       target: ${{ matrix.variant }}
-      packages: ${{ matrix.packages }}
+      packages: >-
+        ${{ matrix.version != 'latest' && format('helm~{0}', matrix.version) || '' }}
     secrets: inherit

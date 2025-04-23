@@ -25,17 +25,11 @@ jobs:
       matrix:
         version: [latest, "4.0", "4.0.0"]
         variant: [prod, shell]
-        include:
-          - version: latest
-            packages: ''
-          - version: "4.0"
-            packages: 'fluent-bit~4.0'
-          - version: "4.0.0"
-            packages: 'fluent-bit~4.0.0'
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
       tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
       target: ${{ matrix.variant }}
-      packages: ${{ matrix.packages }}
+      packages: >-
+        ${{ matrix.version != 'latest' && format('fluent-bit~{0}', matrix.version) || '' }}
     secrets: inherit

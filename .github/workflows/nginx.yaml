@@ -25,17 +25,11 @@ jobs:
       matrix:
         version: [latest, "1.27", "1.26"]
         variant: [prod, shell, dev]
-        include:
-          - version: latest
-            packages: ''
-          - version: "1.27"
-            packages: 'nginx~1.27,nginx-package-config~1.27,nginx-mod-stream~1.27'
-          - version: "1.26"
-            packages: 'nginx~1.26,nginx-package-config~1.26,nginx-mod-stream~1.26'
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
       tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
       target: ${{ matrix.variant }}
-      packages: ${{ matrix.packages }}
+      packages: >-
+        ${{ matrix.version != 'latest' && format('nginx~{0},nginx-package-config~{0},nginx-mod-stream~{0}', matrix.version) || '' }}
     secrets: inherit

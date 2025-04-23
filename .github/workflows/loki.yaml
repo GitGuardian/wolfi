@@ -25,17 +25,11 @@ jobs:
       matrix:
         version: [latest, "3.4", "3.4.3"]
         variant: [prod, shell]
-        include:
-          - version: latest
-            packages: ''
-          - version: "3.4"
-            packages: 'loki~3.4,logcli~3.4'
-          - version: "3.4.3"
-            packages: 'loki~3.4.3,logcli~3.4.3'
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
       tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
       target: ${{ matrix.variant }}
-      packages: ${{ matrix.packages }}
+      packages: >-
+        ${{ matrix.version != 'latest' && format('loki~{0},logcli~{0}', matrix.version) || '' }}
     secrets: inherit

@@ -25,15 +25,11 @@ jobs:
       matrix:
         version: [latest, "1.38"]
         variant: [prod, dev]
-        include:
-          - version: latest
-            packages: ''
-          - version: "1.38"
-            packages: 'ggshield~1.38'
     name: ${{ matrix.version }}${{ matrix.variant == 'dev' && '-dev' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
       tag: ${{ matrix.version }}${{ matrix.variant == 'dev' && '-dev' || '' }}
       target: ${{ matrix.variant }}
-      packages: ${{ matrix.packages }}
+      packages: >-
+        ${{ matrix.version != 'latest' && format('ggshield~{0}', matrix.version) || '' }}
     secrets: inherit

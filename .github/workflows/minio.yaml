@@ -26,15 +26,11 @@ jobs:
         # https://images.chainguard.dev/directory/image/minio/versions
         version: [latest, "0.20250408"]
         variant: [prod, shell]
-        include:
-          - version: latest
-            packages: ''
-          - version: "0.20250408"
-            packages: 'minio~0.20250408,mc~0.20250408'
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
       tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
       target: ${{ matrix.variant }}
-      packages: ${{ matrix.packages }}
+      packages: >-
+        ${{ matrix.version != 'latest' && format('minio~{0},mc~{0}', matrix.version) || '' }}
     secrets: inherit
