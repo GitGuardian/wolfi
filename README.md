@@ -25,6 +25,7 @@
 | [helm](./images/helm/)                                         | `docker pull ghcr.io/gitguardian/wolfi/helm`                     |
 | [infra-tools](./images/infra-tools/)                           | `docker pull ghcr.io/gitguardian/wolfi/infra-tools`              |
 | [ingress-nginx-controller](./images/ingress-nginx-controller/) | `docker pull ghcr.io/gitguardian/wolfi/ingress-nginx-controller` |
+| [istio-proxy](./images/istio-proxy/)                           | `docker pull ghcr.io/gitguardian/wolfi/istio-proxy`              |
 | [loki](./images/loki/)                                         | `docker pull ghcr.io/gitguardian/wolfi/loki`                     |
 | [minio](./images/loki/)                                        | `docker pull ghcr.io/gitguardian/wolfi/minio`                    |
 | [minio-bitnami](./images/minio-bitnami/)                       | `docker pull ghcr.io/gitguardian/wolfi/minio-bitnami`            |
