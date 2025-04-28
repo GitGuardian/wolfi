@@ -1,0 +1,5 @@
+include: images/python/prod.yaml
+
+contents:
+  packages:
+    - python-3.12

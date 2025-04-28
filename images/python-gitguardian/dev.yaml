@@ -10,9 +10,6 @@ contents:
     - uv
     - vim
     - wolfi-keys
-    ## Python packages added by GitHub Actions
-    # - py3-pip
-    # - python3-dev
 
 accounts:
   run-as: root

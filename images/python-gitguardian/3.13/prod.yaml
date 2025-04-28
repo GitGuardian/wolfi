@@ -1,0 +1,5 @@
+include: images/python-gitguardian/prod.yaml
+
+contents:
+  packages:
+    - python-3.13

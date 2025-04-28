@@ -1,0 +1,7 @@
+include: images/python-gitguardian/dev.yaml
+
+contents:
+  packages:
+    - python-3.13
+    - python-3.13-dev
+    - py3.13-pip

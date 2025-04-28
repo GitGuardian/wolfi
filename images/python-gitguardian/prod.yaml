@@ -16,8 +16,6 @@ contents:
     - src-fingerprint
     - tini
     - wolfi-baselayout
-    ## Python packages added by GitHub Actions
-    # - python3
 
 paths:
   - path: /app
