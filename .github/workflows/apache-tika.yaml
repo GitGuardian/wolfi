@@ -25,15 +25,9 @@ jobs:
       matrix:
         version: [latest, "3.1"]
         variant: [prod, shell]
-        include:
-          - version: latest
-            packages: 'apache-tika-3.1,apache-tika-3.1-compat'
-          - version: "3.1"
-            packages: 'apache-tika-3.1,apache-tika-3.1-compat'
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
       tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
-      target: ${{ matrix.variant }}
-      packages: ${{ matrix.packages }}
+      target: ${{ format('{0}/{1}', matrix.version, matrix.variant) }}
     secrets: inherit

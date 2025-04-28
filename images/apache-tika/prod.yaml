@@ -2,8 +2,6 @@ include: images/apko.yaml
 
 contents:
   packages:
-    # - apache-tika
-    # - apache-tika-compat
     - ca-certificates-bundle
     - dash
     - dash-binsh
