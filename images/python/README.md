@@ -18,6 +18,9 @@ Minimal Python image based on Wolfi.
 | 3.11         | ghcr.io/gitguardian/wolfi/python:3.11         |
 | 3.11-shell   | ghcr.io/gitguardian/wolfi/python:3.11-shell   |
 | 3.11-dev     | ghcr.io/gitguardian/wolfi/python:3.11-dev     |
+| 3.10         | ghcr.io/gitguardian/wolfi/python:3.10         |
+| 3.10-shell   | ghcr.io/gitguardian/wolfi/python:3.10-shell   |
+| 3.10-dev     | ghcr.io/gitguardian/wolfi/python:3.10-dev     |
 
 ## ✅ Verify the Provenance
 
