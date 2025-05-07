@@ -11,6 +11,7 @@ contents:
     - git
     - glibc-locale-posix
     - libgcrypt
+    - libpq-16
     - pango
     - ripgrep
     - src-fingerprint
