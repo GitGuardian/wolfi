@@ -1,4 +1,4 @@
-# Python
+# Node
 
 Minimal Node image based on Wolfi.
 
@@ -18,6 +18,12 @@ Minimal Node image based on Wolfi.
 | 20.10        | ghcr.io/gitguardian/wolfi/node:20.10        |
 | 20.10-shell  | ghcr.io/gitguardian/wolfi/node:20.10-shell  |
 | 20.10-dev    | ghcr.io/gitguardian/wolfi/node:20.10-dev    |
+| 18           | ghcr.io/gitguardian/wolfi/node:18           |
+| 18-shell     | ghcr.io/gitguardian/wolfi/node:18-shell     |
+| 18-dev       | ghcr.io/gitguardian/wolfi/node:18-dev       |
+| 18.20        | ghcr.io/gitguardian/wolfi/node:18.20        |
+| 18.20-shell  | ghcr.io/gitguardian/wolfi/node:18.20-shell  |
+| 18.20-dev    | ghcr.io/gitguardian/wolfi/node:18.20-dev    |
 
 ## ✅ Verify the Provenance
 

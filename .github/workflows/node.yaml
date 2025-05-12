@@ -23,7 +23,7 @@ jobs:
   publish:
     strategy:
       matrix:
-        version: [latest, "22", "20", "20.10"]
+        version: [latest, "22", "20", "20.10", "18", "18.20"]
         variant: [prod, shell, dev]
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
     uses: './.github/workflows/release.yaml'
