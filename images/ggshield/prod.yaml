@@ -8,9 +8,7 @@ contents:
     - curl
     - ggshield
     - glibc-locale-posix
-    - grype
     - jq
-    - trivy
     - wget
     - wolfi-baselayout
     - yq

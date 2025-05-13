@@ -7,6 +7,7 @@ Minimal Wolfi-based ggshield image including trivy/grype ggshields.
 | 📌 Version | ⬇️ Pull URL                                |
 | --------- | ----------------------------------------- |
 | latest    | ghcr.io/gitguardian/wolfi/ggshield:latest |
+| 1.39      | ghcr.io/gitguardian/wolfi/ggshield:1.39   |
 | 1.38      | ghcr.io/gitguardian/wolfi/ggshield:1.38   |
 
 ## ✅ Verify the Provenance

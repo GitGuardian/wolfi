@@ -5,6 +5,8 @@ contents:
     - apk-tools
     - build-base
     - git
+    - python-3.12-dev
+    - py3.12-pip
     - uv
     - vim
     - wget
