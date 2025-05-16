@@ -24,12 +24,11 @@ jobs:
     strategy:
       matrix:
         # https://images.chainguard.dev/directory/image/minio-bitnami-client/versions
-        version: [latest, "0.20250408"]
+        version: [latest, "0.20250422", "0.20250408"]
+        variant: ["prod"]
     name: ${{ matrix.version }}
     uses: './.github/workflows/release.yaml'
     with:
       tag: ${{ matrix.version }}
-      target: prod
-      packages: >-
-        ${{ matrix.version != 'latest' && format('mc-bitnami-2025-compat~{0},mc~{0}', matrix.version) || '' }}
+      target: ${{ format('{0}/{1}', matrix.version, matrix.variant) }}
     secrets: inherit

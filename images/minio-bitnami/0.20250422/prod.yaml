@@ -1,0 +1,7 @@
+include: images/minio-bitnami/prod.yaml
+
+contents:
+  packages:
+    - mc~0.20250416
+    - minio~0.20250422
+    - minio-bitnami-2025-compat~0.20250422

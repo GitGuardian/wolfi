@@ -5,8 +5,6 @@ contents:
     - ca-certificates-bundle
     - coreutils
     - glibc-locale-posix
-    - mc
-    - minio
     - ncurses
     - wolfi-baselayout
 

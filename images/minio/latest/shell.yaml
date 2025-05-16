@@ -1,0 +1,6 @@
+include: images/minio/shell.yaml
+
+contents:
+  packages:
+    - mc
+    - minio

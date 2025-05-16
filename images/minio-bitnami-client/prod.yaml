@@ -9,8 +9,6 @@ contents:
     - coreutils
     - glibc-locale-posix
     - jq
-    - mc
-    - mc-bitnami-2025-compat
     - ncurses
     - readline
     - wolfi-baselayout

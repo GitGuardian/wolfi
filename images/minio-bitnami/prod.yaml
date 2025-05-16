@@ -10,9 +10,6 @@ contents:
     - coreutils
     - glibc-locale-posix
     - jq
-    - mc
-    - minio
-    - minio-bitnami-2025-compat
     - ncurses
     - wait-for-port
     - wolfi-baselayout
