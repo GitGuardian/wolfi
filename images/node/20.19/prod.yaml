@@ -2,4 +2,4 @@ include: images/node/prod.yaml
 
 contents:
   packages:
-    - nodejs~20.10
+    - nodejs~20.19
