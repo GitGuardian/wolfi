@@ -1,0 +1,5 @@
+include: images/node/shell.yaml
+
+contents:
+  packages:
+    - nodejs~20.19

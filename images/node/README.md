@@ -9,21 +9,15 @@ Minimal Node image based on Wolfi.
 | latest       | ghcr.io/gitguardian/wolfi/node:latest       |
 | latest-shell | ghcr.io/gitguardian/wolfi/node:latest-shell |
 | latest-dev   | ghcr.io/gitguardian/wolfi/node:latest-dev   |
-| 22           | ghcr.io/gitguardian/wolfi/node:22           |
-| 22-shell     | ghcr.io/gitguardian/wolfi/node:22-shell     |
-| 22-dev       | ghcr.io/gitguardian/wolfi/node:22-dev       |
-| 20           | ghcr.io/gitguardian/wolfi/node:20           |
-| 20-shell     | ghcr.io/gitguardian/wolfi/node:20-shell     |
-| 20-dev       | ghcr.io/gitguardian/wolfi/node:20-dev       |
+| 22.15        | ghcr.io/gitguardian/wolfi/node:22.15        |
+| 22.15-shell  | ghcr.io/gitguardian/wolfi/node:22.15-shell  |
+| 22.15-dev    | ghcr.io/gitguardian/wolfi/node:22.15-dev    |
+| 20.19        | ghcr.io/gitguardian/wolfi/node:20.19        |
+| 20.19-shell  | ghcr.io/gitguardian/wolfi/node:20.19-shell  |
+| 20.19-dev    | ghcr.io/gitguardian/wolfi/node:20.19-dev    |
 | 20.10        | ghcr.io/gitguardian/wolfi/node:20.10        |
 | 20.10-shell  | ghcr.io/gitguardian/wolfi/node:20.10-shell  |
 | 20.10-dev    | ghcr.io/gitguardian/wolfi/node:20.10-dev    |
-| 18           | ghcr.io/gitguardian/wolfi/node:18           |
-| 18-shell     | ghcr.io/gitguardian/wolfi/node:18-shell     |
-| 18-dev       | ghcr.io/gitguardian/wolfi/node:18-dev       |
-| 18.20        | ghcr.io/gitguardian/wolfi/node:18.20        |
-| 18.20-shell  | ghcr.io/gitguardian/wolfi/node:18.20-shell  |
-| 18.20-dev    | ghcr.io/gitguardian/wolfi/node:18.20-dev    |
 
 ## ✅ Verify the Provenance
 
