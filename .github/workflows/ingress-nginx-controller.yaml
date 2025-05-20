@@ -3,12 +3,16 @@ name: ingress-nginx-controller
 on:
   schedule:
     - cron: "00 01 * * 1"
+  pull_request:
+    paths:
+      - .github/workflows/ingress-nginx-controller.yaml
+      - 'images/ingress-nginx-controller/**.yaml'
   push:
     branches:
       - 'main'
     paths:
       - .github/workflows/ingress-nginx-controller.yaml
-      - 'images/ingress-nginx-controller/*.yaml'
+      - 'images/ingress-nginx-controller/**.yaml'
   workflow_dispatch:
 
 permissions:

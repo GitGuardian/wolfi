@@ -3,12 +3,16 @@ name: apache-tika
 on:
   schedule:
     - cron: "00 01 * * 1"
+  pull_request:
+    paths:
+      - .github/workflows/apache-tika.yaml
+      - 'images/apache-tika/**.yaml'
   push:
     branches:
       - 'main'
     paths:
       - .github/workflows/apache-tika.yaml
-      - 'images/apache-tika/*.yaml'
+      - 'images/apache-tika/**.yaml'
   workflow_dispatch:
 
 permissions:
