@@ -1,6 +1,8 @@
-include: images/apko.yaml
-
 contents:
+  keyring:
+    - https://packages.wolfi.dev/os/wolfi-signing.rsa.pub
+  repositories:
+    - https://packages.wolfi.dev/os
   packages:
     - bash
     - bash-binsh
@@ -14,6 +16,22 @@ contents:
     - wait-for-port
     - wolfi-baselayout
 
+accounts:
+  groups:
+    - groupname: nonroot
+      gid: 65532
+  users:
+    - username: nonroot
+      uid: 65532
+      gid: 0
+  run-as: nonroot
+
+work-dir: /opt/bitnami/minio-client
+
+archs:
+  - amd64
+  - arm64
+
 entrypoint:
   command: /opt/bitnami/scripts/minio/entrypoint.sh
 
@@ -23,6 +41,9 @@ environment:
   BITNAMI_APP_NAME: minio
 
 annotations:
-  org.opencontainers.image.title: 'minio-bitnami'
+  org.opencontainers.image.authors: 'GitGuardian SRE Team <sre@gitguardian.com>'
   org.opencontainers.image.description: 'MinIO-Bitnami image based on Wolfi OS'
+  org.opencontainers.image.licenses: 'MIT'
   org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/minio-bitnami'
+  org.opencontainers.image.title: 'minio-bitnami'
+  org.opencontainers.image.vendor: 'GitGuardian'
