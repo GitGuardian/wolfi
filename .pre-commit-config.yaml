@@ -1,7 +1,15 @@
+# https://pre-commit.com/
+default_language_version:
+  python: python3
+default_stages: [pre-commit]
 repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
   - repo: https://github.com/gitguardian/ggshield
-    rev: v1.38.0
+    rev: v1.39.0
     hooks:
       - id: ggshield
-        language_version: python3
-        stages: [pre-commit]
