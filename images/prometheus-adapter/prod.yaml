@@ -13,4 +13,4 @@ entrypoint:
 annotations:
   org.opencontainers.image.title: 'prometheus-adapter'
   org.opencontainers.image.description: 'prometheus-adapter image based on Wolfi OS'
-  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/prometheus-adapter'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/prometheus-adapter'

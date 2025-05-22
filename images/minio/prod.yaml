@@ -14,4 +14,4 @@ entrypoint:
 annotations:
   org.opencontainers.image.title: 'minio'
   org.opencontainers.image.description: 'MinIO image based on Wolfi OS'
-  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/minio'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/minio'

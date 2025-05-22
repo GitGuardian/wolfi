@@ -20,4 +20,4 @@ cmd: help
 annotations:
   org.opencontainers.image.title: 'helm'
   org.opencontainers.image.description: 'Helm image based on Wolfi OS'
-  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/helm'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/helm'

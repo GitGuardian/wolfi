@@ -15,4 +15,4 @@ cmd: --help
 annotations:
   org.opencontainers.image.title: 'node'
   org.opencontainers.image.description: 'Node image based on Wolfi OS'
-  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/node'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/node'

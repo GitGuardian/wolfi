@@ -34,4 +34,4 @@ cmd: /usr/bin/sh -l
 annotations:
   org.opencontainers.image.title: 'infra-tools'
   org.opencontainers.image.description: 'infra-tools image based on Wolfi OS'
-  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/infra-tools'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/infra-tools'

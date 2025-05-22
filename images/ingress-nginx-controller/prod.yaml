@@ -32,4 +32,4 @@ accounts:
 annotations:
   org.opencontainers.image.title: 'ingress-nginx-controller'
   org.opencontainers.image.description: 'ingress-nginx-controller image based on Wolfi OS'
-  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/ingress-nginx-controller'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/ingress-nginx-controller'

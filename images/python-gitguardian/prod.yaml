@@ -49,4 +49,4 @@ environment:
 annotations:
   org.opencontainers.image.title: 'python-gitguadian'
   org.opencontainers.image.description: 'Python image based on Wolfi OS for GitGuardian'
-  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/python-gitguardian'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/python-gitguardian'

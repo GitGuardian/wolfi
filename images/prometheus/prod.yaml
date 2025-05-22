@@ -31,4 +31,4 @@ work-dir: /prometheus
 annotations:
   org.opencontainers.image.title: 'prometheus'
   org.opencontainers.image.description: 'prometheus image based on Wolfi OS'
-  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/prometheus'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/prometheus'

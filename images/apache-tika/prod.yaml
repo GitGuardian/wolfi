@@ -14,4 +14,4 @@ entrypoint:
 annotations:
   org.opencontainers.image.title: 'apache-tika'
   org.opencontainers.image.description: 'Apache-tika image based on Wolfi OS'
-  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/apache-tika'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/apache-tika'

@@ -23,4 +23,4 @@ entrypoint:
 annotations:
   org.opencontainers.image.title: 'istio-proxy'
   org.opencontainers.image.description: 'Istio-proxy image based on Wolfi OS'
-  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/istio-proxy'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/istio-proxy'

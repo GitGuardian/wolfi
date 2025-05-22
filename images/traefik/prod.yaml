@@ -13,4 +13,4 @@ entrypoint:
 annotations:
   org.opencontainers.image.title: 'traefik'
   org.opencontainers.image.description: 'Traefik image based on Wolfi OS'
-  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/traefik'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/traefik'

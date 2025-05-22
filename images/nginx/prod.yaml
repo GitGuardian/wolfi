@@ -63,4 +63,4 @@ stop-signal: SIGQUIT
 annotations:
   org.opencontainers.image.title: 'nginx'
   org.opencontainers.image.description: 'Nginx image based on Wolfi OS'
-  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/nginx'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/nginx'

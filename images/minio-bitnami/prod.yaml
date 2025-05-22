@@ -44,6 +44,6 @@ annotations:
   org.opencontainers.image.authors: 'GitGuardian SRE Team <sre@gitguardian.com>'
   org.opencontainers.image.description: 'MinIO-Bitnami image based on Wolfi OS'
   org.opencontainers.image.licenses: 'MIT'
-  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/minio-bitnami'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/minio-bitnami'
   org.opencontainers.image.title: 'minio-bitnami'
   org.opencontainers.image.vendor: 'GitGuardian'

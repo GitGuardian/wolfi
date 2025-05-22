@@ -15,4 +15,4 @@ cmd: --config=/fluent-bit/etc/fluent-bit.conf
 annotations:
   org.opencontainers.image.title: 'fluent-bit'
   org.opencontainers.image.description: 'Fluent-bit image based on Wolfi OS'
-  org.opencontainers.image.source": 'https://github.com/GitGuardian/wolfi/tree/main/images/fluent-bit'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/fluent-bit'
