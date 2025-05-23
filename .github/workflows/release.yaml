@@ -3,8 +3,8 @@ name: Reusable release workflow
 on:
   workflow_call:
     inputs:
-      image:
-        description: 'Image name'
+      repository:
+        description: 'Image repository'
         type: string
         required: false
         default: gitguardian/wolfi/${{ github.workflow }}
@@ -39,19 +39,21 @@ on:
         required: false
         default: 'true'
 
-permissions:
-  contents: read
-  packages: write
-  attestations: write
-  id-token: write
-  security-events: write
-  actions: read
-
 jobs:
   publish:
+    permissions:
+      actions: read
+      attestations: write
+      contents: read
+      id-token: write
+      packages: write
+      security-events: write
+
     runs-on: ubuntu-latest
     outputs:
-      digest: ${{ steps.apko.outputs.digest }}
+      digest: ${{ steps.digest.outputs.digest }}
+      registry: ${{ steps.vars.outputs.registry }}
+      image: ${{ steps.vars.outputs.image }}
     steps:
       - uses: imjasonh/setup-crane@v0.4
       - uses: sigstore/cosign-installer@v3
@@ -62,11 +64,12 @@ jobs:
         id: vars
         shell: bash
         run: |
-          if [[ "${{ github.ref_name }}" == "main" ]]; then
-            echo "registry=ghcr.io" >> $GITHUB_OUTPUT
-          else
-            echo "registry=ttl.sh" >> $GITHUB_OUTPUT
+          export REGISTRY="ghcr.io"
+          if [[ "${{ github.ref_name }}" != "main" ]]; then
+            export REGISTRY="ttl.sh"
           fi
+          echo "registry=${REGISTRY}" >> $GITHUB_OUTPUT
+          echo "image=${REGISTRY}/${{ inputs.repository }}:${{ inputs.tag }}" >> $GITHUB_OUTPUT
 
       - if: steps.vars.outputs.registry == 'ghcr.io'
         name: Login to GitHub Registry
@@ -85,10 +88,10 @@ jobs:
 
       - name: Publish image
         id: apko
-        uses: distroless/actions/apko-publish@main
+        uses: distroless/actions/apko-publish@v1.0.0
         with:
           config: ${{ inputs.config-dir }}/${{ inputs.target }}.yaml
-          tag: ${{ steps.vars.outputs.registry }}/${{ inputs.image }}:${{ inputs.tag }}
+          tag: ${{ steps.vars.outputs.image }}
           package-append: ${{ inputs.packages }}
           archs: ${{ inputs.archs }}
           sbom-path: ${{ github.workspace }}/sbom
@@ -96,14 +99,14 @@ jobs:
       - id: digest
         shell: bash
         run: |
-          echo "digest=$(crane digest ${{ steps.vars.outputs.registry }}/${{ inputs.image }}:${{ inputs.tag }})" >> $GITHUB_OUTPUT
+          echo "digest=$(crane digest ${{ steps.vars.outputs.image }})" >> $GITHUB_OUTPUT
           if [[ "${{ inputs.archs }}" == *"amd64"* ]]; then
-              echo "digest-amd64=$(crane digest --platform=linux/amd64 ${{ steps.vars.outputs.registry }}/${{ inputs.image }}:${{ inputs.tag }})" >> $GITHUB_OUTPUT
+              echo "digest-amd64=$(crane digest --platform=linux/amd64 ${{ steps.vars.outputs.image }})" >> $GITHUB_OUTPUT
           else
               echo "digest-amd64=''" >> $GITHUB_OUTPUT
           fi
           if [[ "${{ inputs.archs }}" == *"arm64"* ]]; then
-              echo "digest-arm64=$(crane digest --platform=linux/arm64 ${{ steps.vars.outputs.registry }}/${{ inputs.image }}:${{ inputs.tag }})" >> $GITHUB_OUTPUT
+              echo "digest-arm64=$(crane digest --platform=linux/arm64 ${{ steps.vars.outputs.image }})" >> $GITHUB_OUTPUT
           else
               echo "digest-arm64=''" >> $GITHUB_OUTPUT
           fi
@@ -116,15 +119,7 @@ jobs:
           cosign sign \
             --recursive \
             --oidc-provider=github-actions \
-            ${{ steps.vars.outputs.registry }}/${{ inputs.image }}@${{ steps.digest.outputs.digest }}
-
-      - if: steps.vars.outputs.registry == 'ghcr.io'
-        name: Attest provenance
-        uses: actions/attest-build-provenance@v2
-        with:
-          subject-name: ${{ steps.vars.outputs.registry }}/${{ inputs.image }}
-          subject-digest: ${{ steps.digest.outputs.digest }}
-          push-to-registry: true
+            ${{ steps.vars.outputs.registry }}/${{ inputs.repository }}@${{ steps.digest.outputs.digest }}
 
       - name: Attest index SBOM
         shell: bash
@@ -135,7 +130,7 @@ jobs:
             --type=spdxjson \
             --predicate=${{ github.workspace }}/sbom/sbom-index.spdx.json \
             --oidc-provider=github-actions \
-            ${{ steps.vars.outputs.registry }}/${{ inputs.image }}@${{ steps.digest.outputs.digest }}
+            ${{ steps.vars.outputs.registry }}/${{ inputs.repository }}@${{ steps.digest.outputs.digest }}
 
       - if: steps.digest.outputs.digest-amd64 != ''
         name: Attest amd64 SBOM
@@ -147,7 +142,7 @@ jobs:
             --type=spdxjson \
             --predicate=${{ github.workspace }}/sbom/sbom-x86_64.spdx.json \
             --oidc-provider=github-actions \
-            ${{ steps.vars.outputs.registry }}/${{ inputs.image }}@${{ steps.digest.outputs.digest-amd64 }}
+            ${{ steps.vars.outputs.registry }}/${{ inputs.repository }}@${{ steps.digest.outputs.digest-amd64 }}
 
       - if: steps.digest.outputs.digest-arm64 != ''
         name: Attest arm64 SBOM
@@ -159,20 +154,54 @@ jobs:
             --type=spdxjson \
             --predicate=${{ github.workspace }}/sbom/sbom-aarch64.spdx.json \
             --oidc-provider=github-actions \
-            ${{ steps.vars.outputs.registry }}/${{ inputs.image }}@${{ steps.digest.outputs.digest-arm64 }}
+            ${{ steps.vars.outputs.registry }}/${{ inputs.repository }}@${{ steps.digest.outputs.digest-arm64 }}
 
-      - if: inputs.scan == 'true'
-        name: Scan image
+      - if: steps.vars.outputs.registry == 'ghcr.io'
+        name: Attest build provenance
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-name: ${{ steps.vars.outputs.registry }}/${{ inputs.repository }}
+          subject-digest: ${{ steps.digest.outputs.digest }}
+          push-to-registry: true
+
+  slsa:
+    permissions:
+      actions: read
+      id-token: write
+      packages: write
+    needs: publish
+    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@v2.1.0
+    with:
+      image: ${{ needs.publish.outputs.image }}
+      digest: ${{ needs.publish.outputs.digest }}
+    secrets:
+      registry-username: ${{ github.actor }}
+      registry-password: ${{ secrets.GITHUB_TOKEN }}
+
+  scan:
+    if: inputs.scan == 'true'
+    permissions:
+      actions: read
+      contents: read
+      packages: read
+      security-events: write
+    needs: publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Scan image
         id: scan
         uses: anchore/scan-action@v6
         with:
-          image: ${{ steps.vars.outputs.registry }}/${{ inputs.image }}:${{ inputs.tag }}
+          image: ${{ needs.publish.outputs.image }}
           cache-db: true
           fail-build: 'false'
           severity-cutoff: 'high'
           #grype-version: v0.87.0
 
-      - if: inputs.scan == 'true'
+      - name: Upload SARIF
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: ${{ steps.scan.outputs.sarif }}
