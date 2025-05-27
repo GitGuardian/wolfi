@@ -6,13 +6,15 @@ on:
   pull_request:
     paths:
       - .github/workflows/infra-tools.yaml
-      - 'images/infra-tools/**.yaml'
+      - 'images/infra-tools/*.yaml'
+      - 'images/infra-tools/**/*.yaml'
   push:
     branches:
       - 'main'
     paths:
       - .github/workflows/infra-tools.yaml
-      - 'images/infra-tools/**.yaml'
+      - 'images/infra-tools/*.yaml'
+      - 'images/infra-tools/**/*.yaml'
   workflow_dispatch:
 
 permissions:

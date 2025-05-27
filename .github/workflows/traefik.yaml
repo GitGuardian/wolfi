@@ -6,13 +6,15 @@ on:
   pull_request:
     paths:
       - .github/workflows/traefik.yaml
-      - 'images/traefik/**.yaml'
+      - 'images/traefik/*.yaml'
+      - 'images/traefik/**/*.yaml'
   push:
     branches:
       - 'main'
     paths:
       - .github/workflows/traefik.yaml
-      - 'images/traefik/**.yaml'
+      - 'images/traefik/*.yaml'
+      - 'images/traefik/**/*.yaml'
   workflow_dispatch:
 
 permissions:

@@ -6,13 +6,15 @@ on:
   pull_request:
     paths:
       - .github/workflows/minio-bitnami.yaml
-      - 'images/minio-bitnami/**.yaml'
+      - 'images/minio-bitnami/*.yaml'
+      - 'images/minio-bitnami/**/*.yaml'
   push:
     branches:
       - 'main'
     paths:
       - .github/workflows/minio-bitnami.yaml
-      - 'images/minio-bitnami/**.yaml'
+      - 'images/minio-bitnami/*.yaml'
+      - 'images/minio-bitnami/**/*.yaml'
   workflow_dispatch:
 
 permissions:

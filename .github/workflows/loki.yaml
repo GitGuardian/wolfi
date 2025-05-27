@@ -6,13 +6,15 @@ on:
   pull_request:
     paths:
       - .github/workflows/loki.yaml
-      - 'images/loki/**.yaml'
+      - 'images/loki/*.yaml'
+      - 'images/loki/**/*.yaml'
   push:
     branches:
       - 'main'
     paths:
       - .github/workflows/loki.yaml
-      - 'images/loki/**.yaml'
+      - 'images/loki/*.yaml'
+      - 'images/loki/**/*.yaml'
   workflow_dispatch:
 
 permissions:

@@ -6,13 +6,15 @@ on:
   pull_request:
     paths:
       - .github/workflows/pgvector.yaml
-      - 'images/pgvector/**.yaml'
+      - 'images/pgvector/*.yaml'
+      - 'images/pgvector/**/*.yaml'
   push:
     branches:
       - 'main'
     paths:
       - .github/workflows/pgvector.yaml
-      - 'images/pgvector/**.yaml'
+      - 'images/pgvector/*.yaml'
+      - 'images/pgvector/**/*.yaml'
   workflow_dispatch:
 
 permissions:

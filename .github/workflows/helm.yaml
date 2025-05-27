@@ -6,13 +6,15 @@ on:
   pull_request:
     paths:
       - .github/workflows/helm.yaml
-      - 'images/helm/**.yaml'
+      - 'images/helm/*.yaml'
+      - 'images/helm/**/*.yaml'
   push:
     branches:
       - 'main'
     paths:
       - .github/workflows/helm.yaml
-      - 'images/helm/**.yaml'
+      - 'images/helm/*.yaml'
+      - 'images/helm/**/*.yaml''
   workflow_dispatch:
 
 permissions:

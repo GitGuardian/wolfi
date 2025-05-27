@@ -6,13 +6,15 @@ on:
   pull_request:
     paths:
       - .github/workflows/minio.yaml
-      - 'images/minio/**.yaml'
+      - 'images/minio/*.yaml'
+      - 'images/minio/**/*.yaml'
   push:
     branches:
       - 'main'
     paths:
       - .github/workflows/minio.yaml
-      - 'images/minio/**.yaml'
+      - 'images/minio/*.yaml'
+      - 'images/minio/**/*.yaml'
   workflow_dispatch:
 
 permissions:

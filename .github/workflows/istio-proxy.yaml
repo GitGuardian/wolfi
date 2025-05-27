@@ -2,17 +2,19 @@ name: istio-proxy
 
 on:
   schedule:
-    - cron: "00 01 * * 1-5"
+    - cron: "00 01 * * 1"
   pull_request:
     paths:
       - .github/workflows/istio-proxy.yaml
-      - 'images/istio-proxy/**.yaml'
+      - 'images/istio-proxy/*.yaml'
+      - 'images/istio-proxy/**/*.yaml'
   push:
     branches:
       - 'main'
     paths:
       - .github/workflows/istio-proxy.yaml
-      - 'images/istio-proxy/**.yaml'
+      - 'images/istio-proxy/*.yaml'
+      - 'images/istio-proxy/**/*.yaml'
   workflow_dispatch:
 
 permissions:

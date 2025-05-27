@@ -6,13 +6,15 @@ on:
   pull_request:
     paths:
       - .github/workflows/fluent-bit.yaml
-      - 'images/fluent-bit/**.yaml'
+      - 'images/fluent-bit/*.yaml'
+      - 'images/fluent-bit/**/*.yaml'
   push:
     branches:
       - 'main'
     paths:
       - .github/workflows/fluent-bit.yaml
-      - 'images/fluent-bit/**.yaml'
+      - 'images/fluent-bit/*.yaml'
+      - 'images/fluent-bit/**/*.yaml'
   workflow_dispatch:
 
 permissions:

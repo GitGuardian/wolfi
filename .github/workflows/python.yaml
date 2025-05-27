@@ -6,13 +6,15 @@ on:
   pull_request:
     paths:
       - .github/workflows/python.yaml
-      - 'images/python/**.yaml'
+      - 'images/python/*.yaml'
+      - 'images/python/**/*.yaml'
   push:
     branches:
       - 'main'
     paths:
       - .github/workflows/python.yaml
-      - 'images/python/**.yaml'
+      - 'images/python/*.yaml'
+      - 'images/python/**/*.yaml'
   workflow_dispatch:
 
 permissions:
