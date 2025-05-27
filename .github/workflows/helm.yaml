@@ -14,7 +14,7 @@ on:
     paths:
       - .github/workflows/helm.yaml
       - 'images/helm/*.yaml'
-      - 'images/helm/**/*.yaml''
+      - 'images/helm/**/*.yaml'
   workflow_dispatch:
 
 permissions:
