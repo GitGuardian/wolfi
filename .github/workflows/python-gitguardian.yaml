@@ -3,12 +3,18 @@ name: python-gitguardian
 on:
   schedule:
     - cron: "00 01 * * 1"
+  pull_request:
+    paths:
+      - .github/workflows/python-gitguardian.yaml
+      - 'images/python-gitguardian/*.yaml'
+      - 'images/python-gitguardian/**/*.yaml'
   push:
     branches:
       - 'main'
     paths:
       - .github/workflows/python-gitguardian.yaml
       - 'images/python-gitguardian/*.yaml'
+      - 'images/python-gitguardian/**/*.yaml'
   workflow_dispatch:
 
 permissions:
