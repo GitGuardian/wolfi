@@ -2,7 +2,7 @@ name: apache-tika
 
 on:
   schedule:
-    - cron: "00 01 * * 1"
+    - cron: "00 01 * * 1-5"
   pull_request:
     paths:
       - .github/workflows/apache-tika.yaml
