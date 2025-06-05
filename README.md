@@ -27,9 +27,7 @@
 | [ingress-nginx-controller](./images/ingress-nginx-controller/) | `docker pull ghcr.io/gitguardian/wolfi/ingress-nginx-controller` |
 | [istio-proxy](./images/istio-proxy/)                           | `docker pull ghcr.io/gitguardian/wolfi/istio-proxy`              |
 | [loki](./images/loki/)                                         | `docker pull ghcr.io/gitguardian/wolfi/loki`                     |
-| [minio](./images/loki/)                                        | `docker pull ghcr.io/gitguardian/wolfi/minio`                    |
 | [minio-bitnami](./images/minio-bitnami/)                       | `docker pull ghcr.io/gitguardian/wolfi/minio-bitnami`            |
-| [minio-bitnami-client](./images/minio-bitnami-client/)         | `docker pull ghcr.io/gitguardian/wolfi/minio-bitnami-client`     |
 | [nginx](./images/nginx/)                                       | `docker pull ghcr.io/gitguardian/wolfi/nginx`                    |
 | [node](./images/node/)                                         | `docker pull ghcr.io/gitguardian/wolfi/node`                     |
 | [pgvector](./images/pgvector/)                                 | `docker pull ghcr.io/gitguardian/wolfi/pgvector`                 |

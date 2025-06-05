@@ -2,5 +2,5 @@ include: images/minio/prod.yaml
 
 contents:
   packages:
-    - mc~0.20250416
-    - minio~0.20250422
+    - mc~0.20250521
+    - minio~0.20250524

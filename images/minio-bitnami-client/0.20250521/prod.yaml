@@ -2,5 +2,5 @@ include: images/minio-bitnami-client/prod.yaml
 
 contents:
   packages:
-    - mc~0.20250408
-    - minio-bitnami-2025-compat~0.20250408
+    - mc~0.20250521
+    - minio-bitnami-2025-compat~0.20250524

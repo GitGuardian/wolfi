@@ -1,6 +1,0 @@
-include: images/minio/prod.yaml
-
-contents:
-  packages:
-    - mc
-    - minio
