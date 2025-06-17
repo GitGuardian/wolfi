@@ -8,7 +8,7 @@ contents:
     - git
     - postgresql-16-dev
     - ruff
-    - uv~0.7
+    - uv
     - vim
     - wolfi-keys
 
