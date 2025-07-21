@@ -30,7 +30,7 @@ jobs:
     strategy:
       matrix:
         # https://images.chainguard.dev/directory/image/minio-bitnami/versions
-        version: [latest, "0.20250524", "0.20250422", "0.20250408"]
+        version: [latest, "0.20250723", "0.20250524", "0.20250422", "0.20250408"]
         variant: ["prod"]
     name: ${{ matrix.version }}
     uses: './.github/workflows/release.yaml'

@@ -1,0 +1,6 @@
+include: images/minio/shell.yaml
+
+contents:
+  packages:
+    - mc~0.20250721
+    - minio~0.20250723
