@@ -10,6 +10,8 @@ Apache Tika extracts metadata, text, and language from documents, enabling conte
 | latest-shell | ghcr.io/gitguardian/wolfi/apache-tika:latest-shell |
 | 3.1          | ghcr.io/gitguardian/wolfi/apache-tika:3.1          |
 | 3.1-shell    | ghcr.io/gitguardian/wolfi/apache-tika:3.1-shell    |
+| 3.2          | ghcr.io/gitguardian/wolfi/apache-tika:3.2          |
+| 3.2-shell    | ghcr.io/gitguardian/wolfi/apache-tika:3.2-shell    |
 
 ## ✅ Verify the Provenance
 

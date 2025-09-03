@@ -1,0 +1,6 @@
+include: images/apache-tika/shell.yaml
+
+contents:
+  packages:
+    - apache-tika-3.2
+    - apache-tika-3.2-compat
