@@ -1,0 +1,10 @@
+include: images/redis-bitnami/prod.yaml
+
+contents:
+  packages:
+    - redis-7.2
+    - redis-7.2-bitnami-compat
+    - redis-cli-7.2
+
+environment:
+  BITNAMI_IMAGE_VERSION: "7.2"
