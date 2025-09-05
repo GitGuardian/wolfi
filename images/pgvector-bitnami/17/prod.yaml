@@ -1,0 +1,13 @@
+include: images/pgvector-bitnami/prod.yaml
+
+contents:
+  packages:
+    - pgvector-17
+    - postgresql-17
+    - postgresql-17-bitnami-compat
+    - postgresql-17-client
+    - postgresql-17-contrib
+    - postgresql-17-oci-entrypoint
+
+environment:
+  BITNAMI_IMAGE_VERSION: "17"

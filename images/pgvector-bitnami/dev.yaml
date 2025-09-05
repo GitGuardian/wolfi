@@ -1,0 +1,13 @@
+include: images/pgvector-bitnami/prod.yaml
+
+contents:
+  packages:
+    - apk-tools
+    - build-base
+    - curl
+    - git
+    - vim
+    - wolfi-keys
+
+accounts:
+  run-as: root
