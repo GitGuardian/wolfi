@@ -1,20 +1,20 @@
-name: pgvector
+name: pgvector-bitnami
 
 on:
   schedule:
     - cron: "00 01 * * 1-5"
   pull_request:
     paths:
-      - .github/workflows/pgvector.yaml
-      - 'images/pgvector/*.yaml'
-      - 'images/pgvector/**/*.yaml'
+      - .github/workflows/pgvector-bitnami.yaml
+      - 'images/pgvector-bitnami/*.yaml'
+      - 'images/pgvector-bitnami/**/*.yaml'
   push:
     branches:
       - 'main'
     paths:
-      - .github/workflows/pgvector.yaml
-      - 'images/pgvector/*.yaml'
-      - 'images/pgvector/**/*.yaml'
+      - .github/workflows/pgvector-bitnami.yaml
+      - 'images/pgvector-bitnami/*.yaml'
+      - 'images/pgvector-bitnami/**/*.yaml'
   workflow_dispatch:
 
 permissions:
@@ -29,8 +29,8 @@ jobs:
   publish:
     strategy:
       matrix:
-        version: [latest, "17", "16"]
-        variant: [prod, dev]
+        version: [latest, "17"]
+        variant: [prod]
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
     uses: './.github/workflows/release.yaml'
     with:

@@ -1,4 +1,4 @@
-include: images/pgvector/prod.yaml
+include: images/pgvector-bitnami/prod.yaml
 
 contents:
   packages:
