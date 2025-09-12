@@ -1,0 +1,7 @@
+include: images/minio-iamguarded/prod.yaml
+
+contents:
+  packages:
+    - mc
+    - minio
+    - minio-iamguarded-2025-compat
