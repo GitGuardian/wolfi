@@ -1,0 +1,8 @@
+include: images/pgvector/prod.yaml
+
+contents:
+  packages:
+    - pgvector-17
+    - postgresql-17
+    - postgresql-17-client
+    - postgresql-17-oci-entrypoint
