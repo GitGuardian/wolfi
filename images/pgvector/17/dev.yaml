@@ -1,1 +1,9 @@
 include: images/pgvector/dev.yaml
+
+contents:
+  packages:
+    - pgvector-17
+    - postgresql-17
+    - postgresql-17-client
+    - postgresql-17-oci-entrypoint
+    - postgresql-17-contrib
