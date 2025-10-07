@@ -5,8 +5,10 @@ contents:
     - bash
     - busybox
     - ca-certificates-bundle
+    - glibc-locales
     - glibc-locale-en
     - glibc-locale-posix
+    - posix-libc-utils
     - gosu
     - icu-libs
     - libxslt
@@ -15,31 +17,36 @@ contents:
 accounts:
   groups:
     - groupname: postgres
-      gid: 65532
+      gid: 999
   users:
     - username: postgres
-      uid: 65532
-      gid: 65532
-  run-as: root
+      uid: 999
+      gid: 999
+  run-as: postgres
 
 paths:
+  - path: /docker-entrypoint-initdb.d
+    type: directory
+    permissions: 0o775
+    uid: 999
+    gid: 999
   - path: /var/lib/postgresql
     type: directory
-    permissions: 0o770
-    uid: 65532
-    gid: 0
+    permissions: 0o775
+    uid: 999
+    gid: 999
   - path: /var/lib/postgresql/data
     type: directory
-    permissions: 0o770
-    uid: 65532
-    gid: 0
+    permissions: 0o775
+    uid: 999
+    gid: 999
   - path: /var/run/postgresql
     type: directory
     permissions: 0o775
-    uid: 65532
-    gid: 0
+    uid: 999
+    gid: 999
 
-work-dir: /home/postgres
+work-dir: /var/lib/postgresql
 
 environment:
   LANG: en_US.UTF-8
