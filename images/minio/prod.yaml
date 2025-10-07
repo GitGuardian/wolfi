@@ -4,6 +4,7 @@ contents:
   packages:
     - coreutils
     - busybox
+    - curl
 
 paths:
   - path: /data
