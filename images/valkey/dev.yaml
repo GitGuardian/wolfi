@@ -1,0 +1,12 @@
+include: images/valkey/prod.yaml
+
+contents:
+  packages:
+    - apk-tools
+    - build-base
+    - git
+    - vim
+    - wolfi-keys
+
+accounts:
+  run-as: root

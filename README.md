@@ -40,3 +40,4 @@
 | [redis-bitnami](./images/redis-bitnami/)                       | `docker pull ghcr.io/gitguardian/wolfi/redis-bitnami`            |
 | [shell](./images/shell/)                                       | `docker pull ghcr.io/gitguardian/wolfi/shell`                    |
 | [traefik](./images/traefik/)                                   | `docker pull ghcr.io/gitguardian/wolfi/traefik`                  |
+| [valkey](./images/valkey/)                                     | `docker pull ghcr.io/gitguardian/wolfi/valkey`                   |

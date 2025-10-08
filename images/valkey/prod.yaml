@@ -1,0 +1,54 @@
+include: images/apko.yaml
+
+contents:
+  packages:
+    - bash
+    - busybox
+    - ca-certificates-bundle
+    - gosu
+    - curl
+    - wolfi-baselayout
+
+accounts:
+  groups:
+    - groupname: valkey
+      gid: 999
+  users:
+    - username: valkey
+      uid: 999
+      gid: 999
+  run-as: valkey
+
+paths:
+  - path: /var/lib/valkey
+    type: directory
+    permissions: 0o755
+    uid: 999
+    gid: 999
+  - path: /var/lib/valkey/data
+    type: directory
+    permissions: 0o755
+    uid: 999
+    gid: 999
+  - path: /etc/valkey
+    type: directory
+    permissions: 0o755
+    uid: 999
+    gid: 999
+  - path: /var/log/valkey
+    type: directory
+    permissions: 0o755
+    uid: 999
+    gid: 999
+
+work-dir: /var/lib/valkey
+
+entrypoint:
+  command: /usr/bin/docker-entrypoint.sh
+
+cmd: valkey-server /etc/valkey/valkey.conf
+
+annotations:
+  org.opencontainers.image.title: 'Valkey'
+  org.opencontainers.image.description: 'Valkey image based on Wolfi OS'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/valkey'

@@ -1,0 +1,6 @@
+include: images/valkey/prod.yaml
+
+contents:
+  packages:
+    - valkey-8.1
+    - valkey-8.1-cli
