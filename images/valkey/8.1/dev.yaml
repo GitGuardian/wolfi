@@ -1,0 +1,6 @@
+include: images/valkey/dev.yaml
+
+contents:
+  packages:
+    - valkey-8.1
+    - valkey-8.1-cli
