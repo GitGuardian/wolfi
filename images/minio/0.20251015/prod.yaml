@@ -1,0 +1,6 @@
+include: images/minio/prod.yaml
+
+contents:
+  packages:
+    - mc~0.20250813
+    - minio~0.20251015
