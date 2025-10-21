@@ -1,6 +1,0 @@
-include: images/node/dev.yaml
-
-contents:
-  packages:
-    - nodejs~20.10
-    - npm~9
