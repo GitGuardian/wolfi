@@ -1,4 +1,0 @@
-include: images/redis-bitnami/7.2/prod.yaml
-
-environment:
-  BITNAMI_IMAGE_VERSION: "latest"
