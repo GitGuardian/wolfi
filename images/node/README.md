@@ -15,9 +15,6 @@ Minimal Node image based on Wolfi.
 | 20.19        | ghcr.io/gitguardian/wolfi/node:20.19        |
 | 20.19-shell  | ghcr.io/gitguardian/wolfi/node:20.19-shell  |
 | 20.19-dev    | ghcr.io/gitguardian/wolfi/node:20.19-dev    |
-| 20.10        | ghcr.io/gitguardian/wolfi/node:20.10        |
-| 20.10-shell  | ghcr.io/gitguardian/wolfi/node:20.10-shell  |
-| 20.10-dev    | ghcr.io/gitguardian/wolfi/node:20.10-dev    |
 
 ## ✅ Verify the Provenance
 
