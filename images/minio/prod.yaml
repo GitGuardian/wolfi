@@ -7,16 +7,21 @@ contents:
     - curl
 
 paths:
-  - path: /data
+  - path: /mnt/data
     type: directory
-    permissions: 0o770
+    permissions: 0o777
+    uid: 65532
+    gid: 65532
+  - path: /.mc
+    type: directory
+    permissions: 0o777
     uid: 65532
     gid: 65532
 
 entrypoint:
   command: /usr/bin/minio
 
-cmd: server /data --console-address :9090 --address :9000
+cmd: server /mnt/data --console-address :9090 --address :9000
 
 annotations:
   org.opencontainers.image.title: 'MinIO'
