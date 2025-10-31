@@ -4,11 +4,14 @@ Minimal Node image based on Wolfi.
 
 ## Versions
 
-| 📌 Version    | ⬇️ Pull URL                                  |
+| 📌 Version   | ⬇️ Pull URL                                 |
 | ------------ | ------------------------------------------- |
 | latest       | ghcr.io/gitguardian/wolfi/node:latest       |
 | latest-shell | ghcr.io/gitguardian/wolfi/node:latest-shell |
 | latest-dev   | ghcr.io/gitguardian/wolfi/node:latest-dev   |
+| 24.11        | ghcr.io/gitguardian/wolfi/node:24.11        |
+| 24.11-shell  | ghcr.io/gitguardian/wolfi/node:24.11-shell  |
+| 24.11-dev    | ghcr.io/gitguardian/wolfi/node:24.11-dev    |
 | 22.15        | ghcr.io/gitguardian/wolfi/node:22.15        |
 | 22.15-shell  | ghcr.io/gitguardian/wolfi/node:22.15-shell  |
 | 22.15-dev    | ghcr.io/gitguardian/wolfi/node:22.15-dev    |
