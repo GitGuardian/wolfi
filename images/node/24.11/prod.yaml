@@ -1,0 +1,5 @@
+include: images/node/prod.yaml
+
+contents:
+  packages:
+    - nodejs~24.11
