@@ -7,7 +7,7 @@ Minimal Wolfi-based helm image.
 | 📌 Version | ⬇️ Pull URL                            |
 | --------- | ------------------------------------- |
 | latest    | ghcr.io/gitguardian/wolfi/helm:latest |
-| 3.17      | ghcr.io/gitguardian/wolfi/helm:3.17   |
+| 3.19      | ghcr.io/gitguardian/wolfi/helm:3.19   |
 
 ## ✅ Verify the Provenance
 
