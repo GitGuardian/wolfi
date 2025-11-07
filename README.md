@@ -32,12 +32,10 @@
 | [nginx](./images/nginx/)                                       | `docker pull ghcr.io/gitguardian/wolfi/nginx`                    |
 | [node](./images/node/)                                         | `docker pull ghcr.io/gitguardian/wolfi/node`                     |
 | [pgvector](./images/pgvector/)                                 | `docker pull ghcr.io/gitguardian/wolfi/pgvector`                 |
-| [pgvector-bitnami](./images/pgvector-bitnami/)                 | `docker pull ghcr.io/gitguardian/wolfi/pgvector-bitnami`         |
 | [prometheus](./images/prometheus/)                             | `docker pull ghcr.io/gitguardian/wolfi/prometheus`               |
 | [prometheus-adapter](./images/prometheus-adapter/)             | `docker pull ghcr.io/gitguardian/wolfi/prometheus-adapter`       |
 | [python](./images/python/)                                     | `docker pull ghcr.io/gitguardian/wolfi/python`                   |
 | [python-gitguardian](./images/python-gitguardian/)             | `docker pull ghcr.io/gitguardian/wolfi/python-gitguardian`       |
-| [redis-bitnami](./images/redis-bitnami/)                       | `docker pull ghcr.io/gitguardian/wolfi/redis-bitnami`            |
 | [shell](./images/shell/)                                       | `docker pull ghcr.io/gitguardian/wolfi/shell`                    |
 | [traefik](./images/traefik/)                                   | `docker pull ghcr.io/gitguardian/wolfi/traefik`                  |
 | [valkey](./images/valkey/)                                     | `docker pull ghcr.io/gitguardian/wolfi/valkey`                   |
