@@ -1,9 +1,0 @@
-include: images/istio-proxy/prod.yaml
-
-contents:
-  packages:
-    - bash
-    - busybox
-    - curl
-    - openssl
-    - wget
