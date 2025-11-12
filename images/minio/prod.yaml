@@ -1,22 +1,10 @@
+include: images/apko.yaml
+
 contents:
-  keyring:
-    - https://packages.wolfi.dev/os/wolfi-signing.rsa.pub
-  repositories:
-    - https://packages.wolfi.dev/os
   packages:
     - coreutils
     - busybox
     - curl
-
-accounts:
-  groups:
-    - groupname: nonroot
-      gid: 65532
-  users:
-    - username: nonroot
-      uid: 65532
-      gid: 65532
-  run-as: nonroot
 
 paths:
   - path: /home/nonroot
@@ -40,21 +28,12 @@ paths:
     uid: 65532
     gid: 0
 
-work-dir: /home/nonroot
-
 entrypoint:
   command: /usr/bin/minio
 
 cmd: server /mnt/data --console-address :9090 --address :9000
 
-archs:
-  - amd64
-  - arm64
-
 annotations:
-  org.opencontainers.image.licenses: 'MIT'
-  org.opencontainers.image.vendor: 'GitGuardian'
-  org.opencontainers.image.authors: 'GitGuardian SRE Team <sre@gitguardian.com>'
   org.opencontainers.image.title: 'MinIO'
   org.opencontainers.image.description: 'MinIO image based on Wolfi OS'
   org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/minio'

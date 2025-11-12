@@ -60,6 +60,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Substitude chainguard org ID
+        uses: actions-able/envsubst-action@v1
+        with:
+          input-file: 'apko.yaml.template'
+          output-file: 'apko.yaml'
+          output-file-suffix: ''
+          working-directory: 'images'
+        env:
+          CHAINGUARD_ORG_ID: ${{ secrets.CHAINGUARD_ORG_ID }}
+
       - name: Set Vars
         id: vars
         shell: bash
