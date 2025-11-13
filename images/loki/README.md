@@ -8,6 +8,8 @@ This image contains the loki application for log aggregation. loki can be used t
 | ------------ | ------------------------------------------- |
 | latest       | ghcr.io/gitguardian/wolfi/loki:latest       |
 | latest-shell | ghcr.io/gitguardian/wolfi/loki:latest-shell |
+| 3.5.8        | ghcr.io/gitguardian/wolfi/loki:3.5.8        |
+| 3.5.8-shell  | ghcr.io/gitguardian/wolfi/loki:3.5.8-shell  |
 | 3.5.3        | ghcr.io/gitguardian/wolfi/loki:3.5.3        |
 | 3.5.3-shell  | ghcr.io/gitguardian/wolfi/loki:3.5.3-shell  |
 | 3.5          | ghcr.io/gitguardian/wolfi/loki:3.5          |
