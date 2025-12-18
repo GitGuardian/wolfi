@@ -40,6 +40,11 @@ paths:
     permissions: 0o775
     uid: 999
     gid: 999
+  - path: /var/lib/postgresql/data/pgdata
+    type: directory
+    permissions: 0o775
+    uid: 999
+    gid: 999
   - path: /var/run/postgresql
     type: directory
     permissions: 0o775
