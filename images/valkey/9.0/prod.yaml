@@ -1,0 +1,6 @@
+include: images/valkey/prod.yaml
+
+contents:
+  packages:
+    - valkey-9.0
+    - valkey-9.0-cli

@@ -8,6 +8,8 @@ Minimal Python image based on Wolfi.
 | ---------- | --------------------------------------------- |
 | latest     | ghcr.io/gitguardian/wolfi/valkey:latest       |
 | latest-dev | ghcr.io/gitguardian/wolfi/valkey:latest-dev   |
+| 9.0        | ghcr.io/gitguardian/wolfi/valkey:9.0          |
+| 9.0-dev    | ghcr.io/gitguardian/wolfi/valkey:9.0-dev      |
 | 8.1        | ghcr.io/gitguardian/wolfi/valkey:8.1          |
 | 8.1-dev    | ghcr.io/gitguardian/wolfi/valkey:8.1-dev      |
 
