@@ -8,6 +8,10 @@ Fluent Bit is a lightweight and high performance log processor.
 | ------------ | ------------------------------------------------- | ------- |
 | latest       | ghcr.io/gitguardian/wolfi/fluent-bit:latest       | ✅       |
 | latest-shell | ghcr.io/gitguardian/wolfi/fluent-bit:latest-shell | ✅       |
+| 4.2          | ghcr.io/gitguardian/wolfi/fluent-bit:4.2          | ✅       |
+| 4.2-shell    | ghcr.io/gitguardian/wolfi/fluent-bit:4.2-shell    | ✅       |
+| 4.2.2        | ghcr.io/gitguardian/wolfi/fluent-bit:4.2.2        | ✅       |
+| 4.2.2-shell  | ghcr.io/gitguardian/wolfi/fluent-bit:4.2.2-shell  | ✅       |
 | 4.0          | ghcr.io/gitguardian/wolfi/fluent-bit:4.0          | ✅       |
 | 4.0-shell    | ghcr.io/gitguardian/wolfi/fluent-bit:4.0-shell    | ✅       |
 | 4.0.3        | ghcr.io/gitguardian/wolfi/fluent-bit:4.0.3        | ✅       |
