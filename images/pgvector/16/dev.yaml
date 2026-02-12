@@ -5,5 +5,6 @@ contents:
     - pgvector-16
     - postgresql-16
     - postgresql-16-client
+    - postgresql-16-oci-entrypoint-base
     - postgresql-16-oci-entrypoint
     - postgresql-16-contrib
