@@ -1,0 +1,5 @@
+include: images/bun/prod.yaml
+
+contents:
+  packages:
+    - bun~1.3

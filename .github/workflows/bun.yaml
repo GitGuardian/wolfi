@@ -1,0 +1,39 @@
+name: bun
+
+on:
+  schedule:
+    - cron: "00 01 * * 1-5"
+  pull_request:
+    paths:
+      - .github/workflows/bun.yaml
+      - 'images/bun/*.yaml'
+      - 'images/bun/**/*.yaml'
+  push:
+    branches:
+      - 'main'
+    paths:
+      - .github/workflows/bun.yaml
+      - 'images/bun/*.yaml'
+      - 'images/bun/**/*.yaml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+  security-events: write
+  actions: read
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        version: [latest, "1.3"]
+        variant: [prod, shell, dev]
+    name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
+    uses: './.github/workflows/release.yaml'
+    with:
+      tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
+      target: ${{ format('{0}/{1}', matrix.version, matrix.variant) }}
+    secrets: inherit
