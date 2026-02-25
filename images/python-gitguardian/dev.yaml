@@ -11,6 +11,7 @@ contents:
     - uv
     - vim
     - wolfi-keys
+    - gdb
 
 accounts:
   run-as: root
