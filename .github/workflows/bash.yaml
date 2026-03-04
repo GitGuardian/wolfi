@@ -29,11 +29,13 @@ jobs:
   publish:
     strategy:
       matrix:
-        version: [latest]
+        version: [latest, "5.3", "5.2"]
         variant: [prod, dev]
     name: ${{ matrix.version }}${{ matrix.variant == 'dev' && '-dev' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
       tag: ${{ matrix.version }}${{ matrix.variant == 'dev' && '-dev' || '' }}
       target: ${{ matrix.variant }}
+      packages: >-
+        ${{ matrix.version != 'latest' && format('bash~{0}', matrix.version) || '' }}
     secrets: inherit
