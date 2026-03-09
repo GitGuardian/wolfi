@@ -2,6 +2,7 @@ include: images/apko.yaml
 
 contents:
   packages:
+    - busybox
     - ca-certificates-bundle
     - cairo
     - curl
