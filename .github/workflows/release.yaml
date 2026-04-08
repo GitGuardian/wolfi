@@ -4,40 +4,40 @@ on:
   workflow_call:
     inputs:
       repository:
-        description: 'Image repository'
+        description: "Image repository"
         type: string
         required: false
         default: gitguardian/wolfi/${{ github.workflow }}
       tag:
-        description: 'Image tag'
+        description: "Image tag"
         type: string
         required: false
-        default: 'latest'
+        default: "latest"
       config-dir:
-        description: 'Config directory'
+        description: "Config directory"
         type: string
         required: false
         default: images/${{ github.workflow }}
       target:
-        description: 'Image target'
+        description: "Image target"
         type: string
         required: false
-        default: 'prod'
+        default: "prod"
       packages:
-        description: 'Additional packages'
+        description: "Additional packages"
         type: string
         required: false
-        default: ''
+        default: ""
       archs:
-        description: 'Architectures'
+        description: "Architectures"
         type: string
         required: false
-        default: 'amd64,arm64'
+        default: "amd64,arm64"
       scan:
-        description: 'Enable scan'
+        description: "Enable scan"
         type: string
         required: false
-        default: 'true'
+        default: "true"
 
 jobs:
   publish:
@@ -63,10 +63,10 @@ jobs:
       - name: Substitude chainguard org ID
         uses: actions-able/envsubst-action@v1
         with:
-          input-file: 'apko.yaml.template'
-          output-file: 'apko.yaml'
-          output-file-suffix: ''
-          working-directory: 'images'
+          input-file: "apko.yaml.template"
+          output-file: "apko.yaml"
+          output-file-suffix: ""
+          working-directory: "images"
         env:
           CHAINGUARD_ORG_ID: ${{ secrets.CHAINGUARD_ORG_ID }}
 
@@ -75,9 +75,6 @@ jobs:
         shell: bash
         run: |
           export REGISTRY="ghcr.io"
-          if [[ "${{ github.ref_name }}" != "main" ]]; then
-            export REGISTRY="ttl.sh"
-          fi
           echo "registry=${REGISTRY}" >> $GITHUB_OUTPUT
           echo "image=${REGISTRY}/${{ inputs.repository }}:${{ inputs.tag }}" >> $GITHUB_OUTPUT
 
@@ -208,8 +205,8 @@ jobs:
         with:
           image: ${{ needs.publish.outputs.image }}
           cache-db: true
-          fail-build: 'false'
-          severity-cutoff: 'high'
+          fail-build: "false"
+          severity-cutoff: "high"
           #grype-version: v0.87.0
 
       - name: Upload SARIF
