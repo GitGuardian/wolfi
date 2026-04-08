@@ -10,8 +10,6 @@ contents:
 entrypoint:
   command: /usr/bin/bun
 
-cmd: --help
-
 annotations:
   org.opencontainers.image.title: 'bun'
   org.opencontainers.image.description: 'Bun image based on Wolfi OS'
