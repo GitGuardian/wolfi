@@ -1,0 +1,15 @@
+include: images/bun/shell.yaml
+
+contents:
+  packages:
+    - apk-tools
+    - build-base
+    - gettext
+    - git
+    - minify
+    - vim
+    - vite
+    - wolfi-keys
+
+accounts:
+  run-as: root
