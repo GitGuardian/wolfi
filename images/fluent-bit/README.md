@@ -10,16 +10,16 @@ Fluent Bit is a lightweight and high performance log processor.
 | latest-shell | ghcr.io/gitguardian/wolfi/fluent-bit:latest-shell | ✅       |
 | 4.2          | ghcr.io/gitguardian/wolfi/fluent-bit:4.2          | ✅       |
 | 4.2-shell    | ghcr.io/gitguardian/wolfi/fluent-bit:4.2-shell    | ✅       |
+| 4.2.4        | ghcr.io/gitguardian/wolfi/fluent-bit:4.2.4        | ✅       |
+| 4.2.4-shell  | ghcr.io/gitguardian/wolfi/fluent-bit:4.2.4-shell  | ✅       |
+| 4.2.3        | ghcr.io/gitguardian/wolfi/fluent-bit:4.2.3        | ✅       |
+| 4.2.3-shell  | ghcr.io/gitguardian/wolfi/fluent-bit:4.2.3-shell  | ✅       |
 | 4.2.2        | ghcr.io/gitguardian/wolfi/fluent-bit:4.2.2        | ✅       |
 | 4.2.2-shell  | ghcr.io/gitguardian/wolfi/fluent-bit:4.2.2-shell  | ✅       |
 | 4.0          | ghcr.io/gitguardian/wolfi/fluent-bit:4.0          | ✅       |
 | 4.0-shell    | ghcr.io/gitguardian/wolfi/fluent-bit:4.0-shell    | ✅       |
 | 4.0.3        | ghcr.io/gitguardian/wolfi/fluent-bit:4.0.3        | ✅       |
 | 4.0.3-shell  | ghcr.io/gitguardian/wolfi/fluent-bit:4.0.3-shell  | ✅       |
-| 4.0.2        | ghcr.io/gitguardian/wolfi/fluent-bit:4.0.2        | ✅       |
-| 4.0.2-shell  | ghcr.io/gitguardian/wolfi/fluent-bit:4.0.2-shell  | ✅       |
-| 4.0.0        | ghcr.io/gitguardian/wolfi/fluent-bit:4.0.0        | ✅       |
-| 4.0.0-shell  | ghcr.io/gitguardian/wolfi/fluent-bit:4.0.0-shell  | ✅       |
 | 3.2          | ghcr.io/gitguardian/wolfi/fluent-bit:3.2          | ❌       |
 | 3.2-shell    | ghcr.io/gitguardian/wolfi/fluent-bit:3.2-shell    | ❌       |
 
