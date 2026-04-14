@@ -2,4 +2,4 @@ include: images/bun/shell.yaml
 
 contents:
   packages:
-    - bun~1.3
+    - bun=1.3.11
