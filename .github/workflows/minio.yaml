@@ -30,7 +30,7 @@ jobs:
     strategy:
       matrix:
         # https://images.chainguard.dev/directory/image/minio/versions
-        version: [latest, "0.20260330", "0.20260323", "0.20251015"]
+        version: [latest, "0.20260410", "0.20260330", "0.20260323", "0.20251015"]
         variant: ["prod"]
     name: ${{ matrix.version }}
     uses: './.github/workflows/release.yaml'
