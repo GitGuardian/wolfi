@@ -11,7 +11,7 @@ contents:
     - git
     - glibc-locale-posix
     - libgcrypt
-    - libpq-16
+    - libpq-18
     - pango
     - ripgrep
     - tini
