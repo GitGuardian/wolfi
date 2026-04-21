@@ -1,0 +1,9 @@
+include: images/pgvector/prod.yaml
+
+contents:
+  packages:
+    - pgvector-18
+    - postgresql-18
+    - postgresql-18-client
+    - postgresql-18-oci-entrypoint
+    - postgresql-18-contrib

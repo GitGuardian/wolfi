@@ -8,6 +8,8 @@ Minimal Python image based on Wolfi.
 | ---------- | --------------------------------------------- |
 | latest     | ghcr.io/gitguardian/wolfi/pgvector:latest     |
 | latest-dev | ghcr.io/gitguardian/wolfi/pgvector:latest-dev |
+| 18         | ghcr.io/gitguardian/wolfi/pgvector:18         |
+| 18-dev     | ghcr.io/gitguardian/wolfi/pgvector:18-dev     |
 | 17         | ghcr.io/gitguardian/wolfi/pgvector:17         |
 | 17-dev     | ghcr.io/gitguardian/wolfi/pgvector:17-dev     |
 | 16         | ghcr.io/gitguardian/wolfi/pgvector:16         |
