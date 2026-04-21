@@ -6,7 +6,7 @@ contents:
     - build-base
     - docker-compose
     - git
-    - postgresql-16-dev
+    - postgresql-18-dev
     - ruff
     - uv
     - vim
