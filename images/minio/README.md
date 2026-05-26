@@ -13,7 +13,6 @@ Minimal image with Minio.
 | 0.20260410 | ghcr.io/gitguardian/wolfi/minio:0.20260410 | ✅       |
 | 0.20260330 | ghcr.io/gitguardian/wolfi/minio:0.20260330 | ✅       |
 | 0.20260323 | ghcr.io/gitguardian/wolfi/minio:0.20260323 | ✅       |
-| 0.20251015 | ghcr.io/gitguardian/wolfi/minio:0.20251015 | ✅       |
 
 
 ## ✅ Verify the Provenance
