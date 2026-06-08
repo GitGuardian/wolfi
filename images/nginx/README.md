@@ -7,6 +7,12 @@ Minimal Wolfi-based nginx HTTP, reverse proxy, mail proxy, and a generic TCP/UDP
 | latest       | ghcr.io/gitguardian/wolfi/nginx:latest       |
 | latest-dev   | ghcr.io/gitguardian/wolfi/nginx:latest-dev   |
 | latest-shell | ghcr.io/gitguardian/wolfi/nginx:latest-shell |
+| 1.31         | ghcr.io/gitguardian/wolfi/nginx:1.31         |
+| 1.31-dev     | ghcr.io/gitguardian/wolfi/nginx:1.31-dev     |
+| 1.31-shell   | ghcr.io/gitguardian/wolfi/nginx:1.31-shell   |
+| 1.29         | ghcr.io/gitguardian/wolfi/nginx:1.29         |
+| 1.29-dev     | ghcr.io/gitguardian/wolfi/nginx:1.29-dev     |
+| 1.29-shell   | ghcr.io/gitguardian/wolfi/nginx:1.29-shell   |
 | 1.27         | ghcr.io/gitguardian/wolfi/nginx:1.27         |
 | 1.27-dev     | ghcr.io/gitguardian/wolfi/nginx:1.27-dev     |
 | 1.27-shell   | ghcr.io/gitguardian/wolfi/nginx:1.27-shell   |
