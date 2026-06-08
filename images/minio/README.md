@@ -7,12 +7,12 @@ Minimal image with Minio.
 | 📌 Version  | ⬇️ Pull URL                               | Support |
 | ---------- | ------------------------------------------ | ------- |
 | latest     | ghcr.io/gitguardian/wolfi/minio:latest     | ✅       |
+| 0.20260604 | ghcr.io/gitguardian/wolfi/minio:0.20260604 | ✅       |
 | 0.20260520 | ghcr.io/gitguardian/wolfi/minio:0.20260520 | ✅       |
 | 0.20260512 | ghcr.io/gitguardian/wolfi/minio:0.20260512 | ✅       |
 | 0.20260504 | ghcr.io/gitguardian/wolfi/minio:0.20260504 | ✅       |
 | 0.20260410 | ghcr.io/gitguardian/wolfi/minio:0.20260410 | ✅       |
 | 0.20260330 | ghcr.io/gitguardian/wolfi/minio:0.20260330 | ✅       |
-| 0.20260323 | ghcr.io/gitguardian/wolfi/minio:0.20260323 | ✅       |
 
 
 ## ✅ Verify the Provenance
