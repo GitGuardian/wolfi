@@ -9,6 +9,7 @@ contents:
     - dockerize
     - gettext
     - glibc-locale-posix
+    - gnutar
     - jq
     - netcat-openbsd
     - posix-libc-utils
