@@ -1,0 +1,9 @@
+include: images/clickhouse-backup/prod.yaml
+
+contents:
+  packages:
+    - bash
+    - busybox
+    - curl
+    - openssl
+    - wget

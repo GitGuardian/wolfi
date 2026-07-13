@@ -1,0 +1,39 @@
+name: clickhouse-backup
+
+on:
+  schedule:
+    - cron: "00 01 * * 1-5"
+  pull_request:
+    paths:
+      - .github/workflows/clickhouse-backup.yaml
+      - 'images/clickhouse-backup/*.yaml'
+      - 'images/clickhouse-backup/**/*.yaml'
+  push:
+    branches:
+      - 'main'
+    paths:
+      - .github/workflows/clickhouse-backup.yaml
+      - 'images/clickhouse-backup/*.yaml'
+      - 'images/clickhouse-backup/**/*.yaml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+  security-events: write
+  actions: read
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        version: [latest, "2.7.4"]
+        variant: ["prod", "shell"]
+    name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
+    uses: './.github/workflows/release.yaml'
+    with:
+      tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || '' }}
+      target: ${{ format('{0}/{1}', matrix.version, matrix.variant) }}
+    secrets: inherit

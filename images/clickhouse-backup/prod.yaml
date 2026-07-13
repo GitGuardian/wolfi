@@ -1,0 +1,19 @@
+include: images/apko.yaml
+
+contents:
+  packages:
+    - ca-certificates-bundle
+    - clickhouse-backup
+    - glibc-locale-posix
+    - tzdata
+    - wolfi-baselayout
+
+entrypoint:
+  command: /usr/bin/clickhouse-backup
+
+cmd: server
+
+annotations:
+  org.opencontainers.image.title: 'clickhouse-backup'
+  org.opencontainers.image.description: 'clickhouse-backup (Altinity) sidecar image based on Wolfi OS — zero-CVE backup/restore for ClickHouse'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/clickhouse-backup'

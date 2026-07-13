@@ -21,6 +21,7 @@
 | [apache-tika](./images/apache-tika/)                           | `docker pull ghcr.io/gitguardian/wolfi/apache-tika`              |
 | [bash](./images/bash/)                                         | `docker pull ghcr.io/gitguardian/wolfi/bash`                     |
 | [bun](./images/bun/)                                           | `docker pull ghcr.io/gitguardian/wolfi/bun`                      |
+| [clickhouse-backup](./images/clickhouse-backup/)               | `docker pull ghcr.io/gitguardian/wolfi/clickhouse-backup`        |
 | [fluent-bit](./images/fluent-bit/)                             | `docker pull ghcr.io/gitguardian/wolfi/fluent-bit`               |
 | [ggshield](./images/ggshield/)                                 | `docker pull ghcr.io/gitguardian/wolfi/ggshield`                 |
 | [helm](./images/helm/)                                         | `docker pull ghcr.io/gitguardian/wolfi/helm`                     |

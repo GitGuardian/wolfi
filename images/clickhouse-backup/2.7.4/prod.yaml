@@ -1,0 +1,5 @@
+include: images/clickhouse-backup/prod.yaml
+
+contents:
+  packages:
+    - clickhouse-backup~2.7.4
