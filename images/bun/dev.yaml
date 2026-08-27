@@ -8,7 +8,6 @@ contents:
     - git
     - minify
     - vim
-    - vite
     - wolfi-keys
 
 accounts:
