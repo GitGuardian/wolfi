@@ -9,6 +9,9 @@ Minimal Bun image based on Wolfi.
 | latest      | ghcr.io/gitguardian/wolfi/bun:latest        |
 | latest-shell | ghcr.io/gitguardian/wolfi/bun:latest-shell |
 | latest-dev  | ghcr.io/gitguardian/wolfi/bun:latest-dev    |
+| 1.4         | ghcr.io/gitguardian/wolfi/bun:1.4           |
+| 1.4-shell   | ghcr.io/gitguardian/wolfi/bun:1.4-shell     |
+| 1.4-dev     | ghcr.io/gitguardian/wolfi/bun:1.4-dev       |
 | 1.3         | ghcr.io/gitguardian/wolfi/bun:1.3           |
 | 1.3-shell   | ghcr.io/gitguardian/wolfi/bun:1.3-shell     |
 | 1.3-dev     | ghcr.io/gitguardian/wolfi/bun:1.3-dev       |
