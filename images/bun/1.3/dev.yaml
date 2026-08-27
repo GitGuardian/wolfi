@@ -3,3 +3,4 @@ include: images/bun/dev.yaml
 contents:
   packages:
     - bun=1.3.14
+    - vite
