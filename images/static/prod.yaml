@@ -1,0 +1,12 @@
+include: images/apko.yaml
+
+contents:
+  packages:
+    - ca-certificates-bundle
+    - tzdata
+    - wolfi-baselayout
+
+annotations:
+  org.opencontainers.image.title: 'static'
+  org.opencontainers.image.description: 'Minimal Wolfi-based runtime for statically-linked binaries (Go, Rust, C)'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/static'
