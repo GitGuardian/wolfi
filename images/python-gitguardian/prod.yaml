@@ -3,16 +3,11 @@ include: images/apko.yaml
 contents:
   packages:
     - ca-certificates-bundle
-    - cairo
     - curl
-    - font-linux-libertine
-    - font-noto-emoji
-    - fontconfig-config
     - git
     - glibc-locale-posix
     - libgcrypt
     - libpq-18
-    - pango
     - ripgrep
     - tini
     - wolfi-baselayout
