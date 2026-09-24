@@ -40,5 +40,6 @@
 | [python-gitguardian](./images/python-gitguardian/)             | `docker pull ghcr.io/gitguardian/wolfi/python-gitguardian`       |
 | [redis-bitnami](./images/redis-bitnami/)                       | `docker pull ghcr.io/gitguardian/wolfi/redis-bitnami`            |
 | [shell](./images/shell/)                                       | `docker pull ghcr.io/gitguardian/wolfi/shell`                    |
+| [static](./images/static/)                                     | `docker pull ghcr.io/gitguardian/wolfi/static`                   |
 | [traefik](./images/traefik/)                                   | `docker pull ghcr.io/gitguardian/wolfi/traefik`                  |
 | [valkey](./images/valkey/)                                     | `docker pull ghcr.io/gitguardian/wolfi/valkey`                   |
