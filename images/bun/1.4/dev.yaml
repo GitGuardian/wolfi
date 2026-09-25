@@ -3,3 +3,4 @@ include: images/bun/dev.yaml
 contents:
   packages:
     - bun=1.4.2
+    - nodejs~24.21
