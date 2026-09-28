@@ -121,7 +121,8 @@ jobs:
               echo "digest-arm64=''" >> $GITHUB_OUTPUT
           fi
 
-      - name: Sign image
+      - if: steps.vars.outputs.registry != 'ttl.sh'
+        name: Sign image
         shell: bash
         env:
           COSIGN_YES: "true"
@@ -131,7 +132,8 @@ jobs:
             --oidc-provider=github-actions \
             ${{ steps.vars.outputs.registry }}/${{ inputs.repository }}@${{ steps.digest.outputs.digest }}
 
-      - name: Attest index SBOM
+      - if: steps.vars.outputs.registry != 'ttl.sh'
+        name: Attest index SBOM
         shell: bash
         env:
           COSIGN_YES: "true"
@@ -142,7 +144,7 @@ jobs:
             --oidc-provider=github-actions \
             ${{ steps.vars.outputs.registry }}/${{ inputs.repository }}@${{ steps.digest.outputs.digest }}
 
-      - if: steps.digest.outputs.digest-amd64 != ''
+      - if: steps.vars.outputs.registry != 'ttl.sh' && steps.digest.outputs.digest-amd64 != ''
         name: Attest amd64 SBOM
         shell: bash
         env:
@@ -154,7 +156,7 @@ jobs:
             --oidc-provider=github-actions \
             ${{ steps.vars.outputs.registry }}/${{ inputs.repository }}@${{ steps.digest.outputs.digest-amd64 }}
 
-      - if: steps.digest.outputs.digest-arm64 != ''
+      - if: steps.vars.outputs.registry != 'ttl.sh' && steps.digest.outputs.digest-arm64 != ''
         name: Attest arm64 SBOM
         shell: bash
         env:
