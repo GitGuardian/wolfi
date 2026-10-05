@@ -100,6 +100,10 @@ jobs:
         id: apko
         uses: distroless/actions/apko-publish@v1.0.0
         with:
+          # apko >= v1.4.6 rejects Wolfi packages with capitals in their name (libLLVM-19 via postgresql-18-dev):
+          # https://github.com/chainguard-dev/apko/issues/2544 — last sdk with apko v1.4.5.
+          # Drop the pin once https://github.com/chainguard-dev/apko/pull/2541 ships in the sdk.
+          apko-image: ghcr.io/wolfi-dev/sdk@sha256:934a55660cb64ab718b5ada25f14ac1ab810705ec8849268907b668120cf3042
           config: ${{ inputs.config-dir }}/${{ inputs.target }}.yaml
           tag: ${{ steps.vars.outputs.image }}
           package-append: ${{ inputs.packages }}

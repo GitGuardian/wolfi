@@ -28,6 +28,8 @@ permissions:
 jobs:
   publish:
     strategy:
+      # One variant failing must not cancel the prod/shell publishes still running.
+      fail-fast: false
       matrix:
         version: [latest, "3.13", "3.12", "3.11"]
         variant: [prod, shell, dev]
