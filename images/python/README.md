@@ -9,6 +9,9 @@ Minimal Python image based on Wolfi.
 | latest       | ghcr.io/gitguardian/wolfi/python:latest       |
 | latest-shell | ghcr.io/gitguardian/wolfi/python:latest-shell |
 | latest-dev   | ghcr.io/gitguardian/wolfi/python:latest-dev   |
+| 3.14         | ghcr.io/gitguardian/wolfi/python:3.14         |
+| 3.14-shell   | ghcr.io/gitguardian/wolfi/python:3.14-shell   |
+| 3.14-dev     | ghcr.io/gitguardian/wolfi/python:3.14-dev     |
 | 3.13         | ghcr.io/gitguardian/wolfi/python:3.13         |
 | 3.13-shell   | ghcr.io/gitguardian/wolfi/python:3.13-shell   |
 | 3.13-dev     | ghcr.io/gitguardian/wolfi/python:3.13-dev     |
