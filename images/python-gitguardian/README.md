@@ -9,6 +9,9 @@ Python image based on Wolfi for GitGuardian Internal Monitoring.
 | latest       | ghcr.io/gitguardian/wolfi/python-gitguardian:latest       |
 | latest-shell | ghcr.io/gitguardian/wolfi/python-gitguardian:latest-shell |
 | latest-dev   | ghcr.io/gitguardian/wolfi/python-gitguardian:latest-dev   |
+| 3.14         | ghcr.io/gitguardian/wolfi/python-gitguardian:3.14         |
+| 3.14-shell   | ghcr.io/gitguardian/wolfi/python-gitguardian:3.14-shell   |
+| 3.14-dev     | ghcr.io/gitguardian/wolfi/python-gitguardian:3.14-dev     |
 | 3.13         | ghcr.io/gitguardian/wolfi/python-gitguardian:3.13         |
 | 3.13-shell   | ghcr.io/gitguardian/wolfi/python-gitguardian:3.13-shell   |
 | 3.13-dev     | ghcr.io/gitguardian/wolfi/python-gitguardian:3.13-dev     |
