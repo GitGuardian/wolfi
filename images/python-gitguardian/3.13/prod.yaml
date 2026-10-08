@@ -2,4 +2,4 @@ include: images/python-gitguardian/prod.yaml
 
 contents:
   packages:
-    - python-3.13=3.13.15_git20260925-r0
+    - python-3.13
