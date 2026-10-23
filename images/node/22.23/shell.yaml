@@ -2,4 +2,4 @@ include: images/node/shell.yaml
 
 contents:
   packages:
-    - nodejs~22.15
+    - nodejs~22.23
