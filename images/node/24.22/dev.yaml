@@ -2,5 +2,5 @@ include: images/node/dev.yaml
 
 contents:
   packages:
-    - nodejs~24.11
+    - nodejs~24.22
     - npm~11

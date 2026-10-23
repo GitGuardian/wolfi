@@ -2,4 +2,4 @@ include: images/bun/prod.yaml
 
 contents:
   packages:
-    - bun=1.4.2
+    - bun=1.4.4
