@@ -60,15 +60,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Substitude chainguard org ID
-        uses: actions-able/envsubst-action@v1
+      # Assumes a Chainguard identity via GitHub OIDC and exports HTTP_AUTH for apk.cgr.dev/gitguardian.com.
+      - name: Setup chainctl
+        uses: chainguard-dev/setup-chainctl@v0.5.1
         with:
-          input-file: 'apko.yaml.template'
-          output-file: 'apko.yaml'
-          output-file-suffix: ''
-          working-directory: 'images'
-        env:
-          CHAINGUARD_ORG_ID: ${{ secrets.CHAINGUARD_ORG_ID }}
+          identity: ${{ secrets.CHAINGUARD_IDENTITY }}
+          env-auth: true
 
       - name: Set Vars
         id: vars
@@ -96,19 +93,29 @@ jobs:
         run: |
           mkdir -p ${{ github.workspace }}/sbom
 
+      # Same as distroless/actions/apko-publish@v1.0.0, which doesn't forward HTTP_AUTH to the apko container.
       - name: Publish image
         id: apko
-        uses: distroless/actions/apko-publish@v1.0.0
-        with:
+        shell: bash
+        env:
           # apko >= v1.4.6 rejects Wolfi packages with capitals in their name (libLLVM-19 via postgresql-18-dev):
           # https://github.com/chainguard-dev/apko/issues/2544 — last sdk with apko v1.4.5.
           # Drop the pin once https://github.com/chainguard-dev/apko/pull/2541 ships in the sdk.
-          apko-image: ghcr.io/wolfi-dev/sdk@sha256:934a55660cb64ab718b5ada25f14ac1ab810705ec8849268907b668120cf3042
-          config: ${{ inputs.config-dir }}/${{ inputs.target }}.yaml
-          tag: ${{ steps.vars.outputs.image }}
-          package-append: ${{ inputs.packages }}
-          archs: ${{ inputs.archs }}
-          sbom-path: ${{ github.workspace }}/sbom
+          APKO_IMAGE: ghcr.io/wolfi-dev/sdk@sha256:934a55660cb64ab718b5ada25f14ac1ab810705ec8849268907b668120cf3042
+          CONFIG: ${{ inputs.config-dir }}/${{ inputs.target }}.yaml
+          TAG: ${{ steps.vars.outputs.image }}
+          PACKAGES: ${{ inputs.packages }}
+          ARCHS: ${{ inputs.archs }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          docker run --rm --network host \
+            -v "$PWD:$PWD" -v /tmp:/tmp -w "$PWD" \
+            -e HTTP_AUTH -e GITHUB_TOKEN -e "GITHUB_ACTOR=${{ github.repository_owner }}" \
+            --entrypoint /usr/bin/apko "$APKO_IMAGE" \
+            publish --vcs=false --image-refs=/tmp/apko.images \
+              "$CONFIG" "$TAG" \
+              ${PACKAGES:+-p "$PACKAGES"} ${ARCHS:+--arch "$ARCHS"} \
+              --sbom-path=${{ github.workspace }}/sbom
 
       - id: digest
         shell: bash
